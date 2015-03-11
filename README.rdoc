@@ -24,8 +24,19 @@ Preferred Technologies:
 - mysql
 
 
-Challenges:
-We are all new to using audio as a medium in general, and we will be learning about device media permissions, storing and retrieving files from AWS, and handling real-time stop/start functionality.
+#Challenges:
+- We are all new to using audio as a medium in general, and we will be learning about device media permissions, storing and retrieving files from AWS, and handling real-time stop/start functionality.
+
+#Stretch Goals - tech stack:
+- AWS EC2
+- MongoDB
+- D3 data visualization
+
+#Stretch Goals - UX:
+- various ways to pair, display, and animate riffs in relation to each other
+- try out a Snapchat functionality with limited access to audio files in terms of length of time that a use can access a riff
+- refactor user log-in experience to include FB and Twitter credentials
+- consider offering VIP riff channels (?)
 
 
 Riff on!
@@ -43,3 +54,103 @@ CONFIG:
 - rake db:migrate
 - rake routes to see routes as they are currently set up (i.e. localport:3000/users/sign_in)
 - rails s
+
+###########################################
+#RIFF DEV LOG (hourly estimate thusfar)
+#9:05am Wednesday, 3-11-2015
+
+#Work prior to 3-11-2015
+- Practice with eager loading and using the rails console to run queries in ActiveRecord and MySQL:
+- 6 - Robbi
+
+#Consultation with Ryan H 3-9:
+- .25 - Robbi
+- .25 - Chris
+
+# Pre-Consultation with Calvin 3-10:
+- .25 - Robbi
+- .25 - Chris
+
+#Required Consultation with Nick 3-10:
+- .25 - Robbi
+- .25 - Chris
+
+#Idea development:
+- 2 - Robbi
+
+#Rails config, devise config, project documentation, audio recording/processing of 8 initial small riffs (recorded using GarageBand on 3-10-2015 and uploaded to AWS), file uploads to AWS, etc:
+- 6 - Robbi
+
+#Wireframe:
+- 2 - Jesse
+
+#Research on web audio API options:
+- 3 - Chris
+
+#Team consultation (in person and via Slack):
+- 2 - full team
+
+#Researching media tie in and Angular modules etc:
+- 20 - Robbi
+
+#Researching, practice with front end Angular, practice with Rails/Angular, configuration flow dev, lite research of db options, and discussing various options for front-end facing Rails functionality with other professionals in preparation for final project:
+- 50 - Robbi
+
+#Initial meetings and dev:
+- 8 - Robbi
+- 8 - Chris
+
+#Sidebar concept, design, and functionality:
+- 2 - Jesse
+
+#############################################
+#MVP (estimated hours to reach goal for 9am Wednesday, 3-18-2015)
+
+#Consultation with teachers and TAs:
+- 2 - Robbi
+- 4 - Chris
+- 2 - Jesse
+
+#Required class time:
+- 6 - full team
+
+#Other career meetings provided by Iron Yard:
+- 3 - full team
+
+#Consultation with other Iron Yard students to share info and gain new knowledge, key relevant conversations for the advancement of this project:
+- 4 - full team
+
+#Team Consultation and team research:
+- 25 - full team
+
+#Individual Research:
+- 8 - full team
+
+#GitHub workflow tasks:
+- 4 - full team
+
+#Backend data CRUD and structuring with AJAX:
+- 5 - Robbi
+- 5 - Jesse
+
+#D3 Data modelling dev:
+- 5 - Robbi
+- 10 - Jesse
+
+#Integrating front end code into Rails:
+- 8 - Robbi
+- 8 - Chris
+- 8 - Jesse
+
+#Media player functionality and design:
+- 30 - Chris
+- 5 - Robbi
+- 5 - Jesse
+
+#Additional styling:
+- 6 - Jesse
+
+#Additional research, project management, documentation, and UX design:
+- 20 - Robbi
+- 5 - Chris
+- 5 - Jesse
