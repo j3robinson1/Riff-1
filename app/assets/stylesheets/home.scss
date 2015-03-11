@@ -10,37 +10,6 @@ body{
   font-family:'Roboto', sans-serif;
   font-weight:100;
 }
-.navbar {
-  position:relative;
-  width:0px;
-  height:30px;
-  @include transition(all .5s ease);
-  background-color: #333;
-  color: white;
-}
-.link {
-  display: inline-block;
-  margin-left: 15%;
-  text-transform:uppercase;
-    opacity:.5;
-    cursor:pointer;
-    transition:all .5s ease-in;
-    &:hover {
-      opacity:1;
-      color: #29D4E8;
-    }
-}
-.close {
-  position:absolute;
-  display: inline-block;
-  top:5px;
-  right:10px;
-  cursor: pointer;
-  color: white;
-  float:right;
-  margin-right: 10;
-  @include transition(all .5s ease);
-}
 .page-content {
   @include transition(all .5s ease);
   position:relative;
@@ -109,7 +78,6 @@ body{
     }
   }
 }
-
 
 //Actual Menu move
 #sidebartoggler {

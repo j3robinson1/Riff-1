@@ -1,1 +1,8 @@
-%li SWEEEET
+- if current_user
+  = link_to destroy_user_session_path, "data-method" => :delete do
+    %li Sign Out
+- else
+  = link_to remote_sign_up_path, :remote => true do
+    %li Sign Up
+  = link_to remote_sign_in_path, :remote => true do
+    %li Sign In
