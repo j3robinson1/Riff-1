@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, :controllers => {registrations: 'registrations', sesions: 'sessions'}
+  match 'remote_sign_up', to: 'remote_content#remote_sign_up', via: [:get]
+  match 'remote_sign_in', to: 'remote_content#remote_sign_in', via: [:get]  
   resources :things
 
   get 'home/index'

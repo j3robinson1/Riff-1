@@ -12,6 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap/alert
+//= require bootstrap/button
+//= require bootstrap/dropdown
+//= require bootstrap/modal
+//= require bootstrap/transition
 //= require angular/angular
 //= require underscore.min
 //= require angular-route/angular-route
