@@ -4,9 +4,13 @@
 $content-width:80%;
 .container1 {
   position: fixed;
-  width: 350px;
+  width: 250px;
   margin-left: 15%;
   margin-right: 50%;
+  text-align: center;
+}
+.modal-body {
+  width: 250px;
 }
 body{
   margin:0;
@@ -56,7 +60,6 @@ body{
     color:#29D4E8;
   }
 }
-
 .sidebar {
   transition: all .5s ease;
   @include position(fixed, 0px 0 0px -190px);
