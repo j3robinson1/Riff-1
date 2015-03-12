@@ -2,7 +2,12 @@
 @import "bourbon";
 
 $content-width:80%;
-
+.container1 {
+  position: fixed;
+  width: 350px;
+  margin-left: 15%;
+  margin-right: 50%;
+}
 body{
   margin:0;
   padding:0;
