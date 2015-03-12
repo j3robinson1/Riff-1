@@ -1,7 +1,11 @@
-if($('.modal').length > 0) {
- $("#sign_in_modal").modal();
-}
-else {
- $("body").prepend("<%= escape_javascript(render "remote_sign_in", :formats => [:html]) %>");
- $("#sign_in_modal").modal();
-}
+$('.sidebar').on('click', 'a', function(e) {
+  e.preventDefault();
+  var modalId = $(this).attr('rel');
+  var tmpl;
+  if(modalId === "sign_in_modal") {
+    $(".login-modal").html("<%= escape_javascript(render "remote_sign_in", :formats => [:html]) %>");
+  } else {
+    $(".login-modal").html("<%= escape_javascript(render "remote_sign_up", :formats => [:html]) %>");
+  }
+  $("#" + modalId).modal();
+});
