@@ -22,6 +22,5 @@
 //= require angular-route/angular-route
 //= require angular-rails-templates
 //= require home
-//= require_tree .
 
 
