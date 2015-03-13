@@ -1,0 +1,5 @@
+$('.profile').on('click', function(e) {
+  console.log('profile')
+  $(".profile-modal").html("<%= escape_javascript(render "remote_profile", :formats => [:html]) %>");
+  $("#" + current_user).modal();
+});
