@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
+  resources :riffblobs
+
   devise_for :users, :controllers => {registrations: 'registrations', sesions: 'sessions'}
   match 'remote_sign_in', to: 'remote_content#remote_sign_in', via: [:get]
   match 'remote_profile', to: 'remote_content#remote_pofile', via: [:get]
-  resources :things
-
   get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.

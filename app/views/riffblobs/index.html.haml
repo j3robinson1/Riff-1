@@ -1,0 +1,25 @@
+%h1 Listing riffblobs
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Scr
+      %th Id
+      %th
+      %th
+      %th
+      
+  %tbody
+    - @riffblobs.each do |riffblob|
+      %tr
+        %td= riffblob.name
+        %td= riffblob.scr
+        %td= riffblob._id
+        %td= link_to 'Show', riffblob
+        %td= link_to 'Edit', edit_riffblob_path(riffblob)
+        %td= link_to 'Destroy', riffblob, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Riffblob', new_riffblob_path

@@ -1,3 +1,3 @@
 (function() {
-  angular.module('riff', []);
+  angular.module('riffApp', []);
 })();
