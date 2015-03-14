@@ -4,7 +4,10 @@ class CreateRiffPhotos < ActiveRecord::Migration
       t.string :photo_name
       t.string :owner
       t.string :shoutout
-
+      t.attachment :image
+      t.string :image_file_name
+      t.string :image_content_type
+      t.integer :image_file_size
       t.timestamps null: false
     end
     # add_index :riff_photos, :user_id

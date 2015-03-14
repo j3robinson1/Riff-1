@@ -10,6 +10,7 @@ class RiffPhotosController < ApplicationController
   # GET /riff_photos/1
   # GET /riff_photos/1.json
   def show
+    set_riff_photo
   end
 
   # GET /riff_photos/new
@@ -23,25 +24,25 @@ class RiffPhotosController < ApplicationController
 
 # @http_method XHR POST
 # @url /documents
-def create
-  @riff_photos = Riff_photo.create
-end
+# def create
+#   @riff_photos = Riff_photo.create
+# end
 
   # # POST /riff_photos
   # # POST /riff_photos.json
-  # def create
-  #   @riff_photo = RiffPhoto.new(riff_photo_params)
+  def create
+    @riff_photo = RiffPhoto.new(riff_photo_params)
 
-  #   respond_to do |format|
-  #     if @riff_photo.save
-  #       format.html { redirect_to @riff_photo, notice: 'Riff photo was successfully created.' }
-  #       format.json { render :show, status: :created, location: @riff_photo }
-  #     else
-  #       format.html { render :new }
-  #       format.json { render json: @riff_photo.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+    respond_to do |format|
+      if @riff_photo.save
+        format.html { redirect_to @riff_photo, notice: 'Riff photo was successfully created.' }
+        format.json { render :show, status: :created, location: @riff_photo }
+      else
+        format.html { render :new }
+        format.json { render json: @riff_photo.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   # PATCH/PUT /riff_photos/1
   # PATCH/PUT /riff_photos/1.json
@@ -69,12 +70,12 @@ end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    # def set_riff_photo
-    #   @riff_photo = RiffPhoto.find(params[:id])
-    # end
+    def set_riff_photo
+      @riff_photo = RiffPhoto.find(params[:id])
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def riff_photo_params
-      params.require(:riff_photo).permit(:photo_name, :owner, :shoutout)
+      params.require(:riff_photo).permit(:photo_name, :owner, :image, :shoutout)
     end
 end

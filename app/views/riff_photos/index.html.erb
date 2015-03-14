@@ -2,8 +2,14 @@
 <%= link_to 'Add riff_photo', new_riff_photo_path =%>
 <br>
 <% @riff_photos.each do |riff_photo| %>
-<%= riff_photo.s3_url =%>
-<br>
+  <%= riff_photo.photo_name%>
+  <br>
+  <%= riff_photo.owner%>
+  <br>
+  <%= riff_photo.shoutout%>
+  <br>
+  <%= riff_photo.s3_url =%>
+  <br>
   <%= image_tag riff_photo.s3_url =%>
   <br>
 <% end %>
