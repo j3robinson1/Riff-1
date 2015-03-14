@@ -7,7 +7,7 @@ class CreateRiffPhotos < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_index :riff_photos, :user_id
-    add_index :riff_photos, :processed
+    # add_index :riff_photos, :user_id
+    # add_index :riff_photos, :processed
   end
 end
