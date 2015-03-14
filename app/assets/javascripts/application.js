@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require s3_direct_upload
 //= require bootstrap/alert
 //= require bootstrap/button
 //= require bootstrap/dropdown

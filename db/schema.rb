@@ -11,11 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150310222759) do
+ActiveRecord::Schema.define(version: 20150314173841) do
 
-  create_table "things", force: :cascade do |t|
-    t.text     "thing",      limit: 65535
-    t.text     "thing_type", limit: 65535
+  create_table "riff_photos", force: :cascade do |t|
+    t.string   "photo_name", limit: 255
+    t.string   "owner",      limit: 255
+    t.string   "shoutout",   limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "riffblobs", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.text     "scr",        limit: 65535
+    t.string   "_id",        limit: 255
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :riff_photos
+
   resources :riffblobs
 
   devise_for :users, :controllers => {registrations: 'registrations', sesions: 'sessions'}

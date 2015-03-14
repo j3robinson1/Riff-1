@@ -1,4 +1,8 @@
 source 'https://rubygems.org'
+
+gem 's3_direct_upload'
+gem "paperclip", "~> 4.2"
+gem 'aws-sdk', '< 2.0'
 gem 'bourbon'
 gem 'devise'
 gem 'bootstrap-on-rails'
