@@ -1,8 +1,10 @@
 - if current_user
+  %li.profile My Profile
   = link_to destroy_user_session_path, "data-method" => :delete do
     %li Sign Out
-  = link_to remote_profile_path, {rel: current_user, :remote => true} do
-    %li My Profile
+  .myprofile
+    =current_user.email
+    %input{type: 'text', placeholder: 'Status'}
 - else
   = link_to remote_sign_in_path, {rel: 'sign_up_modal', :remote => true} do
     %li Sign Up

@@ -1,6 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100);
 @import "bourbon";
 $content-width:80%;
+.myprofile {
+  position: absolute;
+  left:0;
+}
+input {
+  color: black !important;
+}
 .container1 {
   position: fixed;
   width: 250px;
