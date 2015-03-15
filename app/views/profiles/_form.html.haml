@@ -1,0 +1,19 @@
+= simple_form_for(@profile) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.file_field :avatar
+    = f.input :firstName
+    = f.input :lastNmae
+    = f.input :birthDate
+    = f.input :status
+    = f.input :address1
+    = f.input :address2
+    = f.input :city
+    = f.input :state
+    = f.input :zip
+    = f.input :Cell
+    = f.input :Home
+
+  .form-actions
+    = f.button :submit

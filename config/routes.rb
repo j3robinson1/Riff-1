@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :profiles
+
   resources :riff_photos
 
   resources :riffblobs
