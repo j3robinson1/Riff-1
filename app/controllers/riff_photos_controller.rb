@@ -10,7 +10,6 @@ class RiffPhotosController < ApplicationController
   # GET /riff_photos/1
   # GET /riff_photos/1.json
   def show
-    set_riff_photo
   end
 
   # GET /riff_photos/new
