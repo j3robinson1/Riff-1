@@ -1,43 +1,17 @@
-
--if @profiles.length < 1
-  = link_to 'New Profile', new_profile_path
--else
-  %h1 My Profile
-
-  %table
-    %thead
-      %tr
-        %th Firstname
-        %th Lastnmae
-        %th Birthdate
-        %th Status
-        %th Address1
-        %th Address2
-        %th City
-        %th State
-        %th Zip
-        %th Cell
-        %th Home
-        %th
-        %th
-        %th
-        
-    %tbody
-      - @profiles.each do |profile|
-        %tr
-          %td= profile.firstName
-          %td= profile.lastNmae
-          %td= profile.birthDate
-          %td= profile.status
-          %td= profile.address1
-          %td= profile.address2
-          %td= profile.city
-          %td= profile.state
-          %td= profile.zip
-          %td= profile.Cell
-          %td= profile.Home
-          = image_tag profile.s3_url
-          %td= link_to 'Show', profile
-          %td= link_to 'Edit', edit_profile_path(profile)
-          %td= link_to 'Destroy', profile, :method => :delete, :data => { :confirm => 'Are you sure?' }
-  %br
+%h3 List of profiles
+= form_tag profiles_path, method: :get, class: "form-search", role: "search" do
+  .input-group
+    =text_field_tag 'search', params[:search], class: "form-control", id: "srch-term", placeholder: "Search"
+    .input-group-btn
+      %button.btn.btn-default{:style => "width:40px;"}
+        %span.glyphicon.glyphicon-search
+%ul
+  - @profiles.each do |profile|
+    %li.btn.btn-primary{class: "profile-#{profile.id}"}
+      = link_to profile_patients_path(profile) do 
+        = profile.name
+        |
+        = profile.location
+      |
+      = link_to "Delete", 'javascript:void(0);', class: "delete-profile", profile_id: profile.id
+    %br

@@ -2,9 +2,8 @@
   %li.profile My Profile
   = link_to destroy_user_session_path, "data-method" => :delete do
     %li Sign Out
-  .myprofile
-    =current_user.email
-    %input{type: 'text', placeholder: 'Status'}
+  = link_to new_profile_path, remote: true do
+    %li Edit Profile
 - else
   = link_to remote_sign_in_path, {rel: 'sign_up_modal', :remote => true} do
     %li Sign Up

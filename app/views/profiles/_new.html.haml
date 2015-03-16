@@ -1,0 +1,40 @@
+.form
+  %br
+  %input.firstName{type: "text", placeholder: "first name"}
+  %br
+  %input.lastName{type: "text", placeholder: "last name"}
+  %br
+  %input.birthDate{type: "date"}
+  %br
+  %input.status{type: "text", placeholder: "Status"}
+  %br
+  %input.address1{type: "text", placeholder: "address1"}
+  %br
+  %input.address2{type: "text", placeholder: "address2"}
+  %br
+  %input.city{type: "text", placeholder: "city"}
+  %br
+  %input.state{type: "text", placeholder: "state"}
+  %br
+  %input.zip{type: "integer", placeholder: "Zip"}
+  %br
+  %input.Cell{type: "text", placeholder: "Home phone number"}
+  %br
+  %input.Home{type: "text", placeholder: "Home phone nubmer"}
+  %br
+  %br
+  %input.location{type: "text", placeholder: "Location"}
+  %button.create-profile Create Hospital
+  %button.escape Cancel
+  / = f.file_field :avatar
+  /   = f.input :firstName
+  /   = f.input :lastNmae
+  /   = f.input :birthDate
+  /   = f.input :status
+  /   = f.input :address1
+  /   = f.input :address2
+  /   = f.input :city
+  /   = f.input :state
+  /   = f.input :zip
+  /   = f.input :Cell
+  /   = f.input :Home
