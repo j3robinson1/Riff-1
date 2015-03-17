@@ -1,7 +1,8 @@
 $(document).on('click', '.create-profile', function(){
+  console.log('hey');
   var profile = {
-    name: $(".name").val(),
-    location: $(".location").val()
+    firstName: $(".firstName").val(),
+    lastName: $(".lastName").val()
   };
   $.ajax({
     type: 'POST',

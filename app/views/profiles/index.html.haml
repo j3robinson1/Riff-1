@@ -8,10 +8,8 @@
 %ul
   - @profiles.each do |profile|
     %li.btn.btn-primary{class: "profile-#{profile.id}"}
-      = link_to profile_patients_path(profile) do 
-        = profile.name
-        |
-        = profile.location
+      = link_to profile_path(profile) do 
+        = profile.firstName
       |
       = link_to "Delete", 'javascript:void(0);', class: "delete-profile", profile_id: profile.id
     %br

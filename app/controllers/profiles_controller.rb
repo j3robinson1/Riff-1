@@ -36,7 +36,6 @@ class ProfilesController < ApplicationController
 
 private
   def profile_params
-    # {profile: { name: "asdf"}}
     params.require(:profile).permit(
       :firstName, 
       :lastName, 
