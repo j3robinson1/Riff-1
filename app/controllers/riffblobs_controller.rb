@@ -34,7 +34,7 @@ class RiffblobsController < ApplicationController
 
     respond_to do |format|
       if @riffblob.save
-        format.html { redirect_to @riffblob, notice: 'Riff photo was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Riff photo was successfully created.' }
         format.json { render :show, status: :created, location: @riffblob }
       else
         format.html { render :new }
@@ -48,7 +48,7 @@ class RiffblobsController < ApplicationController
   def update
     respond_to do |format|
       if @riffblob.update(riffblob_params)
-        format.html { redirect_to @riffblob, notice: 'Riff photo was successfully updated.' }
+        format.html { redirect_to home_path, notice: 'Riff photo was successfully updated.' }
         format.json { render :show, status: :ok, location: @riffblob }
       else
         format.html { render :edit }
@@ -62,7 +62,7 @@ class RiffblobsController < ApplicationController
   def destroy
     @riffblob.destroy
     respond_to do |format|
-      format.html { redirect_to riffblobs_url, notice: 'Riff photo was successfully destroyed.' }
+      format.html { redirect_to home_path, notice: 'Riff photo was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
