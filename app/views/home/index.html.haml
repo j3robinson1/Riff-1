@@ -1,8 +1,17 @@
-= link_to riff_photos_path do
-  riff_photo
-%br
-= link_to profiles_path do
-  Profile
-%div{"ng-app" => "riff"}
-  .view-container
-    .view-frame.animate-view{"ng-view" => ""}
+= simple_form_for(@riff_photo, :html => { :multipart => true }) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :photo_name
+    = f.input :owner
+    = f.input :shoutout
+    = f.file_field :image
+  .form-actions
+    = f.button :submit
+
+
+
+
+/ %div{"ng-app" => "riff"}
+/   .view-container
+/     .view-frame.animate-view{"ng-view" => ""}
