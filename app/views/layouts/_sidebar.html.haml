@@ -9,28 +9,28 @@
     %li Sign Up
   = link_to remote_sign_in_path, {rel: 'sign_in_modal', :remote => true} do
     %li Sign In
-.myprofile
-  - @profiles.each do |profile|
-    = profile.firstName
-    = profile.lastName
-    is feeling 
-    = profile.status
-    %br
-    Birthdate:
-    = profile.birthDate
-    %br
-    Address:
-    = profile.address1
-    = profile.address2
-    ,
-    = profile.city
-    ,
-    = profile.state
-    ,
-    = profile.zip
-    %br
-    Home Phone:
-    = profile.home
-    %br
-    Cell Phone:
-    = profile.cell
+/ .myprofile
+/   - @profiles.each do |profile|
+/     = profile.firstName
+/     = profile.lastName
+/     is feeling 
+/     = profile.status
+/     %br
+/     Birthdate:
+/     = profile.birthDate
+/     %br
+/     Address:
+/     = profile.address1
+/     = profile.address2
+/     ,
+/     = profile.city
+/     ,
+/     = profile.state
+/     ,
+/     = profile.zip
+/     %br
+/     Home Phone:
+/     = profile.home
+/     %br
+/     Cell Phone:
+/     = profile.cell

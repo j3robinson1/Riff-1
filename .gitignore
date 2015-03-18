@@ -12,4 +12,5 @@
 !/log/.keep
 /tmp
 /config/aws-keys.yml
+/config/dropbox.yml
 /app/models/riff_photo.rb
