@@ -1,3 +1,8 @@
+/ %div{"ng-app" => "riffApp"}
+/   .view-container
+/     .view-frame.animate-view{"ng-view" => ""}
+
+
 %h2 upload your new riff
 
 = simple_form_for(@riffblob, :html => { :multipart => true }) do |f|
@@ -17,16 +22,20 @@
 %h2 here is what other people are riffing about.....
 
 - @riffblobs.each do |riffblob|
-  = riffblob.photo_name
+  Name:
+  = riffblob.image_file_name
   %br
-    = riffblob.owner
+  Owner:
+  = riffblob.owner
   %br
-    = riffblob.shoutout
+  \#:
+  = riffblob.shoutout
+  %br
+  URL:
+  = riffblob.image
+  %br
+  ||||||||||||||||||||
   %br
 
 
 
-
-/ %div{"ng-app" => "riff"}
-/   .view-container
-/     .view-frame.animate-view{"ng-view" => ""}

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150315165032) do
+ActiveRecord::Schema.define(version: 20150318210613) do
 
   create_table "profiles", force: :cascade do |t|
     t.string   "firstName",           limit: 255
@@ -34,23 +34,13 @@ ActiveRecord::Schema.define(version: 20150315165032) do
   end
 
   create_table "riffblobs", force: :cascade do |t|
-    t.string   "photo_name",         limit: 255
-    t.string   "owner",              limit: 255
-    t.string   "shoutout",           limit: 255
+    t.text     "photo_name",         limit: 65535
+    t.text     "owner",              limit: 65535
     t.string   "image_file_name",    limit: 255
     t.string   "image_content_type", limit: 255
     t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-  end
-
-  create_table "riffblobs", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.text     "scr",        limit: 65535
-    t.string   "_id",        limit: 255
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.text     "shoutout",           limit: 65535
   end
 
   create_table "users", force: :cascade do |t|
