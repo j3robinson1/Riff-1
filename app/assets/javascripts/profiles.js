@@ -1,8 +1,21 @@
-$(document).on('click', '.create-profile', function(){
+ console.log("hi")
+ $(document).on('click', '.create-profile', function(){
   console.log('hey');
   var profile = {
     firstName: $(".firstName").val(),
-    lastName: $(".lastName").val()
+    lastName: $(".lastName").val(),
+    birthDate: $(".birthDate").val(),
+    status: $(".status").val(),
+    address1: $(".address1").val(),
+    address2: $(".address2").val(),
+    city: $(".city").val(),
+    state: $(".state").val(),
+    avatar: $(".avatar").val(),
+    zip: $(".zip").val(),
+    home: $(".home").val(),
+    cell: $(".cell").val(),
+
+
   };
   $.ajax({
     type: 'POST',
