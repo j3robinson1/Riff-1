@@ -34,8 +34,7 @@ ActiveRecord::Schema.define(version: 20150318210613) do
   end
 
   create_table "riffblobs", force: :cascade do |t|
-    t.text     "photo_name",         limit: 65535
-    t.text     "owner",              limit: 65535
+    t.text     "user_id",            limit: 65535
     t.string   "image_file_name",    limit: 255
     t.string   "image_content_type", limit: 255
     t.integer  "image_file_size",    limit: 4

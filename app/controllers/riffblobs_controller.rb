@@ -4,7 +4,7 @@ class RiffblobsController < ApplicationController
   # GET /riffblobs
   # GET /riffblobs.json
   def index
-    @riffblobs = Riffblob.all
+    @riffblobs = Riffblob.all.sample(25)
   end
 
   # GET /riffblobs/1
@@ -34,7 +34,7 @@ class RiffblobsController < ApplicationController
 
     respond_to do |format|
       if @riffblob.save
-        format.html { redirect_to root_path, notice: 'Riff photo was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Riffblob was successfully created.' }
         format.json { render :show, status: :created, location: @riffblob }
       else
         format.html { render :new }
@@ -48,7 +48,7 @@ class RiffblobsController < ApplicationController
   def update
     respond_to do |format|
       if @riffblob.update(riffblob_params)
-        format.html { redirect_to home_path, notice: 'Riff photo was successfully updated.' }
+        format.html { redirect_to home_path, notice: 'Riffblob was successfully updated.' }
         format.json { render :show, status: :ok, location: @riffblob }
       else
         format.html { render :edit }
@@ -62,7 +62,7 @@ class RiffblobsController < ApplicationController
   def destroy
     @riffblob.destroy
     respond_to do |format|
-      format.html { redirect_to home_path, notice: 'Riff photo was successfully destroyed.' }
+      format.html { redirect_to home_path, notice: 'Riffblob was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -75,6 +75,6 @@ class RiffblobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def riffblob_params
-      params.require(:riffblob).permit(:photo_name, :owner, :image, :shoutout)
+      params.require(:riffblob).permit(:user_id, :image, :shoutout)
     end
 end

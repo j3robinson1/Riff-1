@@ -59,11 +59,11 @@ namespace :db do
 
           ].sample,
 
-        audio_url: [
+        # image: [
 
-          "TEST"
+        #   "https://dl-web.dropbox.com/get/Apps/riffApp/blues_mikey_drum_test.mp3?_subject_uid=2413438&w=AAAUZRDv3Vl6QGFxdGhbTVFOHws0JONpLuDBhsUaGcVc4A"
 
-          ].sample
+        #   ].sample
 
           )
 
