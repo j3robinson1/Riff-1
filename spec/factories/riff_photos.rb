@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :riff_photo do
+  factory :riffblob do
     photo_name "MyString"
 owner "MyString"
 shoutout "MyString"

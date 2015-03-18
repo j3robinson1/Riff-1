@@ -18,81 +18,81 @@ require 'spec_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-describe RiffPhotosController do
+describe RiffblobsController do
 
   # This should return the minimal set of attributes required to create a valid
-  # RiffPhoto. As you add validations to RiffPhoto, be sure to
+  # Riffblob. As you add validations to Riffblob, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) { { "photo_name" => "MyString" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
-  # RiffPhotosController. Be sure to keep this updated too.
+  # RiffblobsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
   describe "GET index" do
-    it "assigns all riff_photos as @riff_photos" do
-      riff_photo = RiffPhoto.create! valid_attributes
+    it "assigns all riffblobs as @riffblobs" do
+      riffblob = Riffblob.create! valid_attributes
       get :index, {}, valid_session
-      assigns(:riff_photos).should eq([riff_photo])
+      assigns(:riffblobs).should eq([riffblob])
     end
   end
 
   describe "GET show" do
-    it "assigns the requested riff_photo as @riff_photo" do
-      riff_photo = RiffPhoto.create! valid_attributes
-      get :show, {:id => riff_photo.to_param}, valid_session
-      assigns(:riff_photo).should eq(riff_photo)
+    it "assigns the requested riffblob as @riffblob" do
+      riffblob = Riffblob.create! valid_attributes
+      get :show, {:id => riffblob.to_param}, valid_session
+      assigns(:riffblob).should eq(riffblob)
     end
   end
 
   describe "GET new" do
-    it "assigns a new riff_photo as @riff_photo" do
+    it "assigns a new riffblob as @riffblob" do
       get :new, {}, valid_session
-      assigns(:riff_photo).should be_a_new(RiffPhoto)
+      assigns(:riffblob).should be_a_new(Riffblob)
     end
   end
 
   describe "GET edit" do
-    it "assigns the requested riff_photo as @riff_photo" do
-      riff_photo = RiffPhoto.create! valid_attributes
-      get :edit, {:id => riff_photo.to_param}, valid_session
-      assigns(:riff_photo).should eq(riff_photo)
+    it "assigns the requested riffblob as @riffblob" do
+      riffblob = Riffblob.create! valid_attributes
+      get :edit, {:id => riffblob.to_param}, valid_session
+      assigns(:riffblob).should eq(riffblob)
     end
   end
 
   describe "POST create" do
     describe "with valid params" do
-      it "creates a new RiffPhoto" do
+      it "creates a new Riffblob" do
         expect {
-          post :create, {:riff_photo => valid_attributes}, valid_session
-        }.to change(RiffPhoto, :count).by(1)
+          post :create, {:riffblob => valid_attributes}, valid_session
+        }.to change(Riffblob, :count).by(1)
       end
 
-      it "assigns a newly created riff_photo as @riff_photo" do
-        post :create, {:riff_photo => valid_attributes}, valid_session
-        assigns(:riff_photo).should be_a(RiffPhoto)
-        assigns(:riff_photo).should be_persisted
+      it "assigns a newly created riffblob as @riffblob" do
+        post :create, {:riffblob => valid_attributes}, valid_session
+        assigns(:riffblob).should be_a(Riffblob)
+        assigns(:riffblob).should be_persisted
       end
 
-      it "redirects to the created riff_photo" do
-        post :create, {:riff_photo => valid_attributes}, valid_session
-        response.should redirect_to(RiffPhoto.last)
+      it "redirects to the created riffblob" do
+        post :create, {:riffblob => valid_attributes}, valid_session
+        response.should redirect_to(Riffblob.last)
       end
     end
 
     describe "with invalid params" do
-      it "assigns a newly created but unsaved riff_photo as @riff_photo" do
+      it "assigns a newly created but unsaved riffblob as @riffblob" do
         # Trigger the behavior that occurs when invalid params are submitted
-        RiffPhoto.any_instance.stub(:save).and_return(false)
-        post :create, {:riff_photo => { "photo_name" => "invalid value" }}, valid_session
-        assigns(:riff_photo).should be_a_new(RiffPhoto)
+        Riffblob.any_instance.stub(:save).and_return(false)
+        post :create, {:riffblob => { "photo_name" => "invalid value" }}, valid_session
+        assigns(:riffblob).should be_a_new(Riffblob)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
-        RiffPhoto.any_instance.stub(:save).and_return(false)
-        post :create, {:riff_photo => { "photo_name" => "invalid value" }}, valid_session
+        Riffblob.any_instance.stub(:save).and_return(false)
+        post :create, {:riffblob => { "photo_name" => "invalid value" }}, valid_session
         response.should render_template("new")
       end
     end
@@ -100,60 +100,60 @@ describe RiffPhotosController do
 
   describe "PUT update" do
     describe "with valid params" do
-      it "updates the requested riff_photo" do
-        riff_photo = RiffPhoto.create! valid_attributes
-        # Assuming there are no other riff_photos in the database, this
-        # specifies that the RiffPhoto created on the previous line
+      it "updates the requested riffblob" do
+        riffblob = Riffblob.create! valid_attributes
+        # Assuming there are no other riffblobs in the database, this
+        # specifies that the Riffblob created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        RiffPhoto.any_instance.should_receive(:update).with({ "photo_name" => "MyString" })
-        put :update, {:id => riff_photo.to_param, :riff_photo => { "photo_name" => "MyString" }}, valid_session
+        Riffblob.any_instance.should_receive(:update).with({ "photo_name" => "MyString" })
+        put :update, {:id => riffblob.to_param, :riffblob => { "photo_name" => "MyString" }}, valid_session
       end
 
-      it "assigns the requested riff_photo as @riff_photo" do
-        riff_photo = RiffPhoto.create! valid_attributes
-        put :update, {:id => riff_photo.to_param, :riff_photo => valid_attributes}, valid_session
-        assigns(:riff_photo).should eq(riff_photo)
+      it "assigns the requested riffblob as @riffblob" do
+        riffblob = Riffblob.create! valid_attributes
+        put :update, {:id => riffblob.to_param, :riffblob => valid_attributes}, valid_session
+        assigns(:riffblob).should eq(riffblob)
       end
 
-      it "redirects to the riff_photo" do
-        riff_photo = RiffPhoto.create! valid_attributes
-        put :update, {:id => riff_photo.to_param, :riff_photo => valid_attributes}, valid_session
-        response.should redirect_to(riff_photo)
+      it "redirects to the riffblob" do
+        riffblob = Riffblob.create! valid_attributes
+        put :update, {:id => riffblob.to_param, :riffblob => valid_attributes}, valid_session
+        response.should redirect_to(riffblob)
       end
     end
 
     describe "with invalid params" do
-      it "assigns the riff_photo as @riff_photo" do
-        riff_photo = RiffPhoto.create! valid_attributes
+      it "assigns the riffblob as @riffblob" do
+        riffblob = Riffblob.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        RiffPhoto.any_instance.stub(:save).and_return(false)
-        put :update, {:id => riff_photo.to_param, :riff_photo => { "photo_name" => "invalid value" }}, valid_session
-        assigns(:riff_photo).should eq(riff_photo)
+        Riffblob.any_instance.stub(:save).and_return(false)
+        put :update, {:id => riffblob.to_param, :riffblob => { "photo_name" => "invalid value" }}, valid_session
+        assigns(:riffblob).should eq(riffblob)
       end
 
       it "re-renders the 'edit' template" do
-        riff_photo = RiffPhoto.create! valid_attributes
+        riffblob = Riffblob.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
-        RiffPhoto.any_instance.stub(:save).and_return(false)
-        put :update, {:id => riff_photo.to_param, :riff_photo => { "photo_name" => "invalid value" }}, valid_session
+        Riffblob.any_instance.stub(:save).and_return(false)
+        put :update, {:id => riffblob.to_param, :riffblob => { "photo_name" => "invalid value" }}, valid_session
         response.should render_template("edit")
       end
     end
   end
 
   describe "DELETE destroy" do
-    it "destroys the requested riff_photo" do
-      riff_photo = RiffPhoto.create! valid_attributes
+    it "destroys the requested riffblob" do
+      riffblob = Riffblob.create! valid_attributes
       expect {
-        delete :destroy, {:id => riff_photo.to_param}, valid_session
-      }.to change(RiffPhoto, :count).by(-1)
+        delete :destroy, {:id => riffblob.to_param}, valid_session
+      }.to change(Riffblob, :count).by(-1)
     end
 
-    it "redirects to the riff_photos list" do
-      riff_photo = RiffPhoto.create! valid_attributes
-      delete :destroy, {:id => riff_photo.to_param}, valid_session
-      response.should redirect_to(riff_photos_url)
+    it "redirects to the riffblobs list" do
+      riffblob = Riffblob.create! valid_attributes
+      delete :destroy, {:id => riffblob.to_param}, valid_session
+      response.should redirect_to(riffblobs_url)
     end
   end
 

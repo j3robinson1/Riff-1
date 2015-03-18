@@ -1,4 +1,6 @@
-= simple_form_for(@riff_photo, :html => { :multipart => true }) do |f|
+%h2 upload your new riff
+
+= simple_form_for(@riffblob, :html => { :multipart => true }) do |f|
   = f.error_notification
 
   .form-inputs
@@ -8,6 +10,19 @@
     = f.file_field :image
   .form-actions
     = f.button :submit
+
+%br
+%br
+%br
+%h2 here is what other people are riffing about.....
+
+- @riffblobs.each do |riffblob|
+  = riffblob.photo_name
+  %br
+    = riffblob.owner
+  %br
+    = riffblob.shoutout
+  %br
 
 
 

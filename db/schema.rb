@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20150315165032) do
     t.datetime "updated_at",                        null: false
   end
 
-  create_table "riff_photos", force: :cascade do |t|
+  create_table "riffblobs", force: :cascade do |t|
     t.string   "photo_name",         limit: 255
     t.string   "owner",              limit: 255
     t.string   "shoutout",           limit: 255

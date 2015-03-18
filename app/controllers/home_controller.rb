@@ -1,19 +1,19 @@
 class HomeController < ApplicationController
   def index
-    @riff_photo = RiffPhoto.new
-    @riff_photos = RiffPhoto.all
+    @riffblob = Riffblob.new
+    @riffblobs = Riffblob.all
   end
 
     def create
-    @riff_photo = RiffPhoto.new(riff_photo_params)
+    @riffblob = Riffblob.new(riffblob_params)
 
     respond_to do |format|
-      if @riff_photo.save
-        format.html { redirect_to @riff_photo, notice: 'Riff photo was successfully created.' }
-        format.json { render :show, status: :created, location: @riff_photo }
+      if @riffblob.save
+        format.html { redirect_to @riffblob, notice: 'Riff photo was successfully created.' }
+        format.json { render :show, status: :created, location: @riffblob }
       else
         format.html { render :new }
-        format.json { render json: @riff_photo.errors, status: :unprocessable_entity }
+        format.json { render json: @riffblob.errors, status: :unprocessable_entity }
       end
     end
   end

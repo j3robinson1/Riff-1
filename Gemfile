@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'faker'
 gem "paperclip-dropbox", ">= 1.1.7"
 gem 's3_direct_upload'
 gem "paperclip", "~> 4.2"

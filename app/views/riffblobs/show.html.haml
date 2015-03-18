@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Photo name:
+  = @riffblob.photo_name
+%p
+  %b Owner:
+  = @riffblob.owner
+%p
+  %b Shoutout:
+  = @riffblob.shoutout
+%p
+  %b Image:
+  = @riffblob.image
+
+= link_to 'Edit', edit_riffblob_path(@riffblob)
+\|
+= link_to 'Back', riffblobs_path

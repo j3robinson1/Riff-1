@@ -1,16 +1,11 @@
-class CreateRiffPhotos < ActiveRecord::Migration
+class CreateRiffblobs < ActiveRecord::Migration
   def change
-    create_table :riff_photos do |t|
-      t.string :photo_name
-      t.string :owner
+    create_table :riffblobs do |t|
       t.string :shoutout
-      t.attachment :image
-      t.string :image_file_name
-      t.string :image_content_type
-      t.integer :image_file_size
+      t.string :user_id
       t.timestamps null: false
     end
-    # add_index :riff_photos, :user_id
-    # add_index :riff_photos, :processed
+    # add_index :riffblobs, :user_id
+    # add_index :riffblobs, :processed
   end
 end

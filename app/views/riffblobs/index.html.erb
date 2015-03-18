@@ -1,0 +1,12 @@
+<h1>riffblob upload</h1>
+<%= link_to 'Add riffblob', new_riffblob_path =%>
+<br>
+<% @riffblobs.each do |riffblob| %>
+  <%= riffblob.photo_name%>
+  <br>
+  <%= riffblob.owner%>
+  <br>
+  <%= riffblob.shoutout%>
+  <br>
+  <br>
+<% end %>

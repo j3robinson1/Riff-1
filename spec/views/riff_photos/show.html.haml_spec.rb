@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe "riff_photos/show" do
+describe "riffblobs/show" do
   before(:each) do
-    @riff_photo = assign(:riff_photo, stub_model(RiffPhoto,
+    @riffblob = assign(:riffblob, stub_model(Riffblob,
       :photo_name => "Photo Name",
       :owner => "Owner",
       :shoutout => "Shoutout"
