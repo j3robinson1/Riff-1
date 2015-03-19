@@ -18,11 +18,6 @@
 //= require bootstrap/dropdown
 //= require bootstrap/modal
 //= require bootstrap/transition
-//= require angular/angular
-//= require underscore.min
-//= require angular-route/angular-route
-//= require angular-rails-templates
-//= require home
 //= require profiles
 
 
