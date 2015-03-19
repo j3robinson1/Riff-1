@@ -5,6 +5,9 @@ class RiffblobsController < ApplicationController
   # GET /riffblobs.json
   def index
     @riffblobs = Riffblob.all.sample(25)
+    # respond_to do |format|
+    #   format.json { render json: @riffblobs.as_json }
+    # end
   end
 
   # GET /riffblobs/1

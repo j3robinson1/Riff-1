@@ -2,11 +2,11 @@
 <%= link_to 'Add riffblob', new_riffblob_path =%>
 <br>
 <% @riffblobs.each do |riffblob| %>
-  <%= riffblob.photo_name%>
-  <br>
-  <%= riffblob.owner%>
+  <%= riffblob.user_id%>
   <br>
   <%= riffblob.shoutout%>
+  <br>
+  <%= riffblob.image%>
   <br>
   <br>
 <% end %>

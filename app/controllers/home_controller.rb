@@ -2,6 +2,9 @@ class HomeController < ApplicationController
   def index
     @riffblob = Riffblob.new
     @riffblobs = Riffblob.all.sample(25)
+    # respond_to do |format|
+    #   format.json { render json: @riffblobs.as_json }
+    # end
   end
 
   # def create   
