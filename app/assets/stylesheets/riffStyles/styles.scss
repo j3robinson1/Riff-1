@@ -1,0 +1,135 @@
+/* .bg {
+background: url('http://www.eskimoinsulation.com/images/sound-rooms.jpg') no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+z-index:0;
+} */
+
+html, body {
+  height: 100%; width: 100%; margin: 0;
+}
+
+.view {
+  position:absolute;
+  width:100%;
+}
+
+#bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index:-1;
+}
+#bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+  z-index:-1;
+}
+
+.upload {
+  text-align:center;
+  margin:auto;
+  padding-top:100px;
+  z-index:1;
+  width:20%;
+  h2 {
+    color:white;
+  }
+  input {
+    float:left;
+  }
+}
+
+#mic {
+  width:30%;
+  text-align:center;
+  margin:0 auto;
+  z-index:1;
+  -webkit-animation: slide 1.5s ease;
+  display:block;
+
+}
+
+@-webkit-keyframes slide {
+  0% {
+    transform:translateY(-200%);
+  }
+  100% {
+    transform:translateY(0%);
+  }
+}
+
+@font-face {
+  font-family: 'Delicate';
+  src: url(Delicate.ttf);
+}
+
+h1 {
+  font-family:'Delicate';
+  font-size:100px;
+  color:white;
+  text-align:center;
+  margin-bottom:10px;
+}
+
+.record {
+  border-radius: 50%;
+  background-color:red;
+  height:100px;
+  width:100px;
+  text-align:center;
+  margin: 0 auto;
+  display:block;
+  margin-top: 50px;
+}
+
+.onAir {
+  border-top: 1px solid #96d1f8;
+  background: #edf0f2;
+  background: -webkit-gradient(linear, left top, left bottom, from(#eaeef2), to(#edf0f2));
+  background: -webkit-linear-gradient(top, #eaeef2, #edf0f2);
+  background: -moz-linear-gradient(top, #eaeef2, #edf0f2);
+  background: -ms-linear-gradient(top, #eaeef2, #edf0f2);
+  background: -o-linear-gradient(top, #eaeef2, #edf0f2);
+  padding: 7px 14px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  color: #969396;
+  font-size: 24px;
+  font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+  text-decoration: none;
+  position:fixed;
+  left:750px;
+}
+.onAir:active {
+  border-top-color: #bd1515;
+  color: #bd1515;
+}
+
+video#bgvid {
+  position: fixed; right: 0; bottom: 0;
+  min-width: 100%; min-height: 100%;
+  width: auto; height: auto; z-index: -100;
+  background: no-repeat;
+  background-size: cover;
+}
+
+.splash {
+  top:15vh;
+  font-size:40vh;
+}
