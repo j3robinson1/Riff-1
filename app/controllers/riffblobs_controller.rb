@@ -4,10 +4,10 @@ class RiffblobsController < ApplicationController
   # GET /riffblobs
   # GET /riffblobs.json
   def index
-    @riffblobs = Riffblob.all.sample(25)
-    # respond_to do |format|
-    #   format.json { render json: @riffblobs.as_json }
-    # end
+    @riffblobs = Riffblob.all.map{|rb| {file: rb.image} }
+    respond_to do |format|
+      format.json { render json: @riffblobs.as_json }
+    end
   end
 
   # GET /riffblobs/1

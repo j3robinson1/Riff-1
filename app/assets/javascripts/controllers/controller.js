@@ -1,6 +1,7 @@
+// http://localhost:3000/riffblobs.json
 (function () {
   "use strict";
-  angular.module('RiffApp')
+  angular.module('riffApp')
   .controller('RiffController', function(RiffService,$location) {
     var riffCtrl = this;
     // riffCtrl.riffs = RiffService.getRiffs();

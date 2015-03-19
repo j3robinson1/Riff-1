@@ -1,43 +1,14 @@
-/ %div{"ng-app" => "riffApp"}
-/   .view-container
-/     .view-frame.animate-view{"ng-view" => ""}
 
 
-<h2>upload your new riff</h2>
-<%= simple_form_for(@riffblob, :html => { :multipart => true }) do |f| %>
-  <%= f.error_notification %>
-  <div class="form-inputs">
-    <%= f.input :user_id %>
-    <%= f.input :shoutout %>
-    <%= f.file_field :image %>
-  </div>
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
-<br/>
-<br/>
-<br/>
-<h2>here is what other people are riffing about.....</h2>
-<% @riffblobs.each do |riffblob| %>
-  <br/>
-  <%= riffblob.image_updated_at %>
-  <br/>
-  User_id:
-  <%= riffblob.user_id %>
-  <br/>
-  \#:
-  <%= riffblob.shoutout %>
-  <br/>
-  URL:
-  <%= riffblob.image %>
-  <br/>
-  <%= "https://dl-web.dropbox.com/get/Apps/riffApp/blues_mikey_drum_test.mp3?_subject_uid=2413438&w=AAAUZRDv3Vl6QGFxdGhbTVFOHws0JONpLuDBhsUaGcVc4A" %>
-  <br/>
-  <br/>
-  ||||||||||||||||||||
-  <br/>
-<% end %>
+  <ng-view class='view'></ng-view>
 
 
+  <script src="assets/underscore.min.js"></script>
+  <script src="assets/angular/angular.js"></script>
+  <script src="assets/angular-route/angular-route.js"></script>
 
+  http://localhost:3000/assets/controllers/controller.js
+
+
+  <script src='assets/app.js'></script>
+  <script src='assets/controllers/controller.js'></script>
