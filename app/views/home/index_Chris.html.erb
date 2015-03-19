@@ -1,21 +1,23 @@
-<!DOCTYPE html>
-<html>
+<!<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>riff</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
+  <meta charset="UTF-8">
+  <title>Riff</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body ng-app='RiffApp'>
 
-<div ng-app="riffApp">
-  <div class="view-container">
-    <div class="view-frame animate-view"></div>
-  </div>
-</div>
+  <ng-view class='view'></ng-view>
 
-<%= yield %>
 
+  <script src="bower_components/underscore/underscore.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+
+
+  <script src='app.js'></script>
+  <!-- <script src='directive.js'></script> -->
+  <script src='controller.js'></script>
+  <script src='service.js'></script>
 </body>
 </html>
-
