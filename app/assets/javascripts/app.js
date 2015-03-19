@@ -1,14 +1,14 @@
 (function () {
   "use strict";
 
-  angular.module('RiffApp', [
+  angular.module('riffApp', [
   'ngRoute',
   // 'ngUpload'
   ])
   .config(function ($routeProvider) {
     $routeProvider
     .when('/', {
-      templateUrl: 'splash.html',
+      templateUrl: 'assets/splash.html',
       controller: 'RiffController as riffCtrl'
     })
 
@@ -17,7 +17,7 @@
   .config(function ($routeProvider) {
     $routeProvider
     .when('/upload', {
-      templateUrl: 'upload.html',
+      templateUrl: 'assets/upload.html',
       controller: 'RiffController as riffCtrl'
     })
 
