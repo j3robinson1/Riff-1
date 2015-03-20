@@ -1,14 +1,14 @@
 - if current_user
   %li.profile My Profile
   = link_to destroy_user_session_path, "data-method" => :delete do
-    %li Sign Out
+    %li{ :style => "color: #DFD1E3;"} Sign Out
   = link_to new_profile_path, remote: true do
-    %li Edit Profile
+    %li{ :style => "color: #DFD1E3;"} Edit Profile
 - else
   = link_to remote_sign_in_path, {rel: 'sign_up_modal', :remote => true} do
-    %li Sign Up
+    %li{ :style => "color: #DFD1E3;"} Sign Up
   = link_to remote_sign_in_path, {rel: 'sign_in_modal', :remote => true} do
-    %li Sign In
+    %li{ :style => "color: #DFD1E3;"} Sign In
 / .myprofile
 /   - @profiles.each do |profile|
 /     = profile.firstName

@@ -2,21 +2,21 @@
  .container1
   .modal-dialog
   .modal-content
-   %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"}
    %h4#SignInModal.title Sign into acount
    %p Fill in the following to login
    .modal-header
    = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :remote => true, :format => :js, :html => {:class => "form-signin"}) do |f|
     .modal-body
-     = text_field_tag 'user[email]', nil, :size=> 37.5
+     = text_field_tag 'user[email]', nil, :size=> 37.5, :placeholder => 'Email'
      %br
-     = password_field_tag 'user[password]', nil, :size=> 37.5
+     = password_field_tag 'user[password]', nil, :size=> 37.5, :placeholder => 'Password'
      %br
      = check_box_tag 'user[remember_me]'
      = label_tag 'user[remember_me]', 'Remember me'
      %br
     .footer
      .form-actions
+      %a{ :href => "#", "data-dismiss" => "modal" } Cancel
       %button Sign in
       %br
       = link_to "Forgot your password?", new_password_path(:user)
