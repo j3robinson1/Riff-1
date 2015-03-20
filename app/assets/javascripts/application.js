@@ -12,7 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require s3_direct_upload
+//= require underscore.min
+//= require angular/angular
+//= require angular-route/angular-route
+//= require app
+//= require controllers/controller
+//= require ngUpload/ng-upload
 //= require bootstrap/alert
 //= require bootstrap/button
 //= require bootstrap/dropdown

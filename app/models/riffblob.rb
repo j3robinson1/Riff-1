@@ -1,7 +1,6 @@
 class Riffblob < ActiveRecord::Base
 
   validates :shoutout, presence: true
-  validates :user_id, presence: true
 
   attr_accessor :sound_url
 
