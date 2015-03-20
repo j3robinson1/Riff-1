@@ -33,6 +33,10 @@ class RiffblobsController < ApplicationController
   # # POST /riffblobs
   # # POST /riffblobs.json
   def create
+    p '*'*100
+    # p riffblob_params
+    params[:riffblob] = { image: params[:file], shoutout: params[:fullname]}
+    p params
     @riffblob = Riffblob.create(riffblob_params)
 
     respond_to do |format|
