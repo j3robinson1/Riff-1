@@ -78,6 +78,6 @@ class RiffblobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def riffblob_params
-      params.require(:riffblob).permit(:user_id, :image, :shoutout)
+      params.require(:riffblob).permit(:user_id, :image, :shoutout, :fullname, :file)
     end
 end
