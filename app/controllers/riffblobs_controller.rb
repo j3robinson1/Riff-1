@@ -33,12 +33,12 @@ class RiffblobsController < ApplicationController
   # # POST /riffblobs
   # # POST /riffblobs.json
   def create
-    @riffblob = Riffblob.new(riffblob_params)
+    @riffblob = Riffblob.create(riffblob_params)
 
     respond_to do |format|
       if @riffblob.save
         format.html { redirect_to root_path, notice: 'Riffblob was successfully created.' }
-        format.json { render :show, status: :created, location: @riffblob }
+        format.json
       else
         format.html { render :new }
         format.json { render json: @riffblob.errors, status: :unprocessable_entity }
@@ -78,6 +78,6 @@ class RiffblobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def riffblob_params
-      params.require(:riffblob).permit(:user_id, :image, :shoutout)
+      params.require(:riffblob).permit(:user_id, :image, :shoutout, :fullname, :file)
     end
 end

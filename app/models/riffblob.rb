@@ -1,7 +1,6 @@
 class Riffblob < ActiveRecord::Base
 
   validates :shoutout, presence: true
-  validates :user_id, presence: true
 
   attr_accessor :sound_url
 
@@ -19,7 +18,9 @@ class Riffblob < ActiveRecord::Base
   :storage => :dropbox,
   :dropbox_credentials => Rails.root.join("config/dropbox.yml")
 
-
+  has_attached_file :file,
+  :storage => :dropbox,
+  :dropbox_credentials => Rails.root.join("config/dropbox.yml")
 
 
 
@@ -31,6 +32,9 @@ class Riffblob < ActiveRecord::Base
   # s3_permissions: 'authenticated-read',
   # path: "items/:basename.:extension",
   # s3_server_side_encryption: :aes256
+  validates :file,
+  attachment_content_type: { content_type: [ 'audio/mpeg', 'audio/x-mpeg', 'audio/mp3', 'audio/x-mp3', 'audio/mpeg3', 'audio/x-mpeg3', 'audio/mpg', 'audio/x-mpg', 'audio/x-mpegaudio' ]}
+  
   validates :image,
   attachment_content_type: { content_type: [ 'audio/mpeg', 'audio/x-mpeg', 'audio/mp3', 'audio/x-mp3', 'audio/mpeg3', 'audio/x-mpeg3', 'audio/mpg', 'audio/x-mpg', 'audio/x-mpegaudio' ]}
 
