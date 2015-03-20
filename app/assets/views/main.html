@@ -1,6 +1,12 @@
-<h2>Record View</h2>
+<h2>Upload View</h2>
 
-<ul>
+<div class="alert alert-info" >
+  Server Response: {{response | json}}
+  Fullname: <b>{{response.fullname}}</b><br />
+  Picture: {{response.pictureUrl}}
+</div>
+
+<!-- <ul>
   <li>
     <audio controls>
       <source src='originalriff1 - 3_10_15, 9.12 PM.m4a' type='audio/mp4'>
@@ -14,7 +20,7 @@
       </li>
     </ul>
   </li>
-</ul>
+</ul> -->
 
 <!-- <ul>
   <li ng-repeat="riff in RiffCtrl.riffs">
