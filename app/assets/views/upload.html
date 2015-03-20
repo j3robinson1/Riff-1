@@ -14,7 +14,7 @@
 
     <p>
       <label>Fullname:</label>
-      <input type="text" name="fullname" ng-model="fullname" >
+      <input type="text" name="fullname" ng-model="response.fullname" >
     </p>
     <p>
       <label>Your picture (file will not be saved on the server):</label>
@@ -25,10 +25,13 @@
     </p>
   </form>
 
+  <audio ng-if="response.image" controls>
+    <source ng-data-src={{audioUrl}} type="audio/mp3">
+  </audio>
+
   <div class="alert alert-info" >
     Server Response: {{response | json}}
-    Fullname: <b>{{response.fullname}}</b><br />
-    Picture: {{response.file}}
+    Picture: {{response.image}}
   </div>
 
 </div>
