@@ -34,12 +34,13 @@ ActiveRecord::Schema.define(version: 20150318210613) do
   end
 
   create_table "riffblobs", force: :cascade do |t|
-    t.text     "user_id",            limit: 65535
-    t.string   "image_file_name",    limit: 255
-    t.string   "image_content_type", limit: 255
-    t.integer  "image_file_size",    limit: 4
-    t.datetime "image_updated_at"
-    t.text     "shoutout",           limit: 65535
+    t.text     "user_id",           limit: 65535
+    t.string   "file_file_name",    limit: 255
+    t.string   "file_content_type", limit: 255
+    t.integer  "file_file_size",    limit: 4
+    t.datetime "file_updated_at"
+    t.text     "shoutout",          limit: 65535
+    t.text     "url",               limit: 65535
   end
 
   create_table "users", force: :cascade do |t|

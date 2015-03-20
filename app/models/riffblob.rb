@@ -13,7 +13,7 @@ class Riffblob < ActiveRecord::Base
     }
   end
 
-  has_attached_file :image,
+  has_attached_file :file,
   :storage => :dropbox,
   :dropbox_credentials => Rails.root.join("config/dropbox.yml")
 
@@ -26,11 +26,11 @@ class Riffblob < ActiveRecord::Base
   # s3_permissions: 'authenticated-read',
   # path: "items/:basename.:extension",
   # s3_server_side_encryption: :aes256
-  validates :image,
+  validates :file,
   attachment_content_type: { content_type: [ 'audio/mpeg', 'audio/x-mpeg', 'audio/mp3', 'audio/x-mp3', 'audio/mpeg3', 'audio/x-mpeg3', 'audio/mpg', 'audio/x-mpg', 'audio/x-mpegaudio' ]}
 
   def s3_url(style=nil, expires_in=30.minutes)
-    image.s3_object(style).url_for(:read, secure: true, expires: expires_in).to_s
+    file.s3_object(style).url_for(:read, secure: true, expires: expires_in).to_s
   end
 
 end

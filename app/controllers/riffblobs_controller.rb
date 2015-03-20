@@ -4,7 +4,7 @@ class RiffblobsController < ApplicationController
   # GET /riffblobs
   # GET /riffblobs.json
   def index
-    @riffblobs = Riffblob.all.map{|rb| {file: rb.image} }
+    @riffblobs = Riffblob.all.map{|rb| {file: rb.file} }
     respond_to do |format|
       format.json { render json: @riffblobs.as_json }
     end
@@ -35,7 +35,7 @@ class RiffblobsController < ApplicationController
   def create
     p '*'*100
     # p riffblob_params
-    params[:riffblob] = { image: params[:file], shoutout: params[:fullname]}
+    params[:riffblob] = { file: params[:file], shoutout: params[:fullname]}
     p params
     @riffblob = Riffblob.new(riffblob_params)
 
@@ -81,6 +81,6 @@ class RiffblobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def riffblob_params
-      params.require(:riffblob).permit(:user_id, :image, :shoutout)
+      params.require(:riffblob).permit(:user_id, :file, :shoutout, :url)
     end
 end
