@@ -4,6 +4,7 @@
   angular.module('riffApp')
   .controller('RiffController', function ($scope) {
     $scope.uploadComplete = function (content) {
+      // console.log(content);
       $scope.response = JSON.parse(content); // Presumed content is a json string!
       $scope.response.style = {
         fullname: $scope.response.fullname,

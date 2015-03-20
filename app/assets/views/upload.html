@@ -1,14 +1,14 @@
-<div id='bg'>
+<div id="bg">
   <img src="http://www.eskimoinsulation.com/images/sound-rooms.jpg" alt="">
 </div>
 <h1>riff</h1>
-<button class='record' ng-init="show = true" ng-show="show" ng-click="show=!show; myStyle={color:red}"></button>
-<button class='onAir' ng-style="myStyle">ON AIR</button>
-<img id='mic' src="assets/Untitled.png" alt="" ng-show="!show">
+<button class="record" ng-init="show = true" ng-show="show" ng-click="show=!show; myStyle={color:red}"></button>
+<button class="onAir" ng-style="myStyle">ON AIR</button>
+<img id="mic" src="assets/Untitled.png" alt="" ng-show="!show">
 
-<div class='upload'>
+<div class="upload">
   <h2>Upload Your Riff</h2>
-  <form ng-upload="uploadComplete(riffblob)" action="/riffblobs.json">
+  <form action="/riffblobs.json" ng-upload="uploadComplete(content)">
     <p>
       <label>Fullname:</label>
       <input type="text" name="fullname" ng-model="fullname" >
