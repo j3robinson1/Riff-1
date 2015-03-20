@@ -2,14 +2,30 @@
   <img src="http://www.eskimoinsulation.com/images/sound-rooms.jpg" alt="">
 </div>
 <h1>riff</h1>
-<button class='record' ng-init="show = true" ng-show="show" ng-click="show=!show; myStyle={color:'red'}"></button>
+<button class='record' ng-init="show = true" ng-show="show" ng-click="show=!show; myStyle={color:red}"></button>
 <button class='onAir' ng-style="myStyle">ON AIR</button>
-<img id='mic' src="Untitled.png" alt="" ng-show="!show">
+<img id='mic' src="assets/Untitled.png" alt="" ng-show="!show">
+
 <div class='upload'>
   <h2>Upload Your Riff</h2>
-  <form>
-    <input type="text" ng-model="newRiff.name" placeholder="Riff Name">
-    <input type="text" ng-model="newRiff.src" placeholder="Paste Filename">
-    <button ng-click="riffCtrl.addMyRiffs(newRiff)">Create</button>
+  <form ng-upload="uploadComplete(riffblob)" action="/riffblobs.json">
+    <p>
+      <label>Fullname:</label>
+      <input type="text" name="fullname" ng-model="fullname" />
+    </p>
+    <p>
+      <label>Your picture (file will not be saved on the server):</label>
+      <input type="file" name="file"/>
+    </p>
+    <p>
+      <input type="submit" class="btn" value="Submit"  />
+    </p>
   </form>
+
+  <div class="alert alert-info" >
+    Server Response: {{response | json}}
+    Fullname: <b>{{response.fullname}}</b><br />
+    Picture: {{response.file}}
+  </div>
+
 </div>
