@@ -3,12 +3,12 @@
   "use strict";
   angular.module('riffApp')
   .controller('RiffController', function ($scope, $sce) {
-    
+
     $scope.uploadComplete = function (content) {
 
       $scope.response = (content); // Presumed content is a json string!
-      console.log($scope.response.image)
-      $scope.audioUrl = $scope.response.image;
+      console.log($scope.response.file)
+      $scope.audioUrl = $scope.response.file;
 
       // Clear form (reason for using the 'ng-model' directive on the input elements)
       $scope.fullname = '';
