@@ -43,7 +43,7 @@ class RiffblobsController < ApplicationController
       if @riffblob.save
         format.json
       else
-        format.html { render :new }
+        format.html { render :nothing => true }
         format.json { render json: @riffblob.errors, status: :unprocessable_entity }
       end
     end
@@ -52,12 +52,13 @@ class RiffblobsController < ApplicationController
   # PATCH/PUT /riffblobs/1
   # PATCH/PUT /riffblobs/1.json
   def update
+    params[:riffblob] = { url: params[:url]}
     respond_to do |format|
       if @riffblob.update(riffblob_params)
-        format.html { redirect_to home_path, notice: 'Riffblob was successfully updated.' }
-        format.json { render :show, status: :ok, location: @riffblob }
+        format.html { notice: 'Riffblob was successfully updated.' }
+        format.json { render :nothing => true, status: :ok, location: @riffblob }
       else
-        format.html { render :edit }
+        format.html { render :nothing => true }
         format.json { render json: @riffblob.errors, status: :unprocessable_entity }
       end
     end
@@ -68,7 +69,7 @@ class RiffblobsController < ApplicationController
   def destroy
     @riffblob.destroy
     respond_to do |format|
-      format.html { redirect_to home_path, notice: 'Riffblob was successfully destroyed.' }
+      format.html { notice: 'Riffblob was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
