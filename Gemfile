@@ -20,11 +20,11 @@ gem 'mysql2'
 
 # group :development, :test do
 #  gem 'pg', '0.13.2'
-# end  
+# end
 
 # group :production do
 #  gem 'pg', '0.13.2'
-# end 
+# end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -39,7 +39,7 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 gem 'bower-rails'
-gem 'angular-rails-templates'
+# gem 'angular-rails-templates'
 gem 'sass', '3.2.19'
 
 gem "foreman"
@@ -78,4 +78,3 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
