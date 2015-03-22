@@ -15,7 +15,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new
     respond_to do |format|
       format.js
-    end    
+    end
   end
 
   def create
@@ -37,18 +37,18 @@ class ProfilesController < ApplicationController
 private
   def profile_params
     params.require(:profile).permit(
-      :firstName, 
-      :lastName, 
-      :birthDate, 
-      :status, 
-      :address1, 
-      :address2, 
-      :city, 
-      :state, 
-      :zip, 
-      :Cell, 
-      :Home, 
+      :firstName,
+      :lastName,
+      :birthDate,
+      :status,
+      :address1,
+      :address2,
+      :city,
+      :state,
+      :zip,
+      :Cell,
+      :Home,
       :avatar
     )
-  end  
+  end
 end

@@ -25,13 +25,13 @@
     </p>
   </form>
 
-  <audio ng-if="response.image" controls>
-    <source ng-data-src={{audioUrl}} type="audio/mp3">
+  <audio ng-if="response.file" controls>
+    <source ng-src={{audioUrl}} type="audio/mp3">
   </audio>
 
   <div class="alert alert-info" >
     Server Response: {{response | json}}
-    Picture: {{response.image}}
+    Picture: {{response.file}}
   </div>
 
 </div>
