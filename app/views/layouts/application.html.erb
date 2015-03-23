@@ -12,7 +12,14 @@
   <div class="login-modal"></div>
   <input id="sidebartoggler" type="checkbox">
     <div class="page-wrapper">
-      <label class="toggle" for="sidebartoggler"><img src="/assets/riff_logo.png" height="45" width= "45"></label>
+      <label class="toggle" for="sidebartoggler">
+        <% if user_signed_in? %>
+          <img src="/assets/riff_logo2.png" height="45" width= "45">
+          <div class="id"><%= current_user.id %></div>
+        <% else %>
+          <img src="/assets/riff_logo.png" height="45" width= "45">
+        <% end %>
+        </label>
       <div class="page-content">
         <%= yield %>
       </div>

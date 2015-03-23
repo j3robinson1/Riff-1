@@ -3,6 +3,10 @@
 @import url(http://fonts.googleapis.com/css?family=The+Girl+Next+Door);
 $content-width:80%;
 
+.id {
+  color: #F0ECC5;
+  text-align: right;
+}
 .myprofile {
   position: absolute;
   left:0;
@@ -16,16 +20,27 @@ input {
 }
 .container1 {
   position: absolute;
-  width: 250px;
-  margin-left: 15%;
-  margin-right: 50%;
+  width: 240px;
+  margin-left: 1%;
+  margin-top: 12.5%;
   text-align: center;
-  background-color: #9C89A3;
+  background-color: #8E7E96;
   border-radius: 5%;
   z-index:100;
 }
+.button {
+  background-color: #C4B4CC;
+}
+.button:hover {
+  background-color: #695E6E;
+  cursor: pointer;
+  color: #C4B4CC;
+}
+#user_email, #user_password, #user_password_confirmation {
+  background-color: #EFE4F5;
+}
 .modal-body {
-  width: 250px;
+  width: 240px;
 }
 .modal-header {
   padding-top: 0 !important;
@@ -67,7 +82,7 @@ body{
 }
 
 .toggle {
-  @include position(fixed, 20px 0 0 20px);
+  @include position(fixed, 12.5px 0 0 12.5px);
   transition:all .5s ease;
   z-index:1;
   font-size:30px;
@@ -82,7 +97,7 @@ body{
 .sidebar {
   transition: all .5s ease;
   @include position(fixed, 0px 0 0px -190px);
-  width:120px;
+  width:200px;
   padding:30px;
   background:#2D1C33;
   color: #DFD1E3;
