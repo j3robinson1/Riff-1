@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20150318210613) do
   end
 
   create_table "riffblobs", force: :cascade do |t|
-    t.string   "user_id",           limit: 255,   default: "1"
+    t.string   "user_id",           limit: 255
     t.string   "file_file_name",    limit: 255
     t.string   "file_content_type", limit: 255
     t.integer  "file_file_size",    limit: 4

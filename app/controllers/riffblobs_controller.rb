@@ -4,8 +4,9 @@ class RiffblobsController < ApplicationController
   # GET /riffblobs
   # GET /riffblobs.json
   def index
-    @riffblobs = Riffblob.current_user.all.reverse
+    @riffblobs = current_user.riffblobs
     respond_to do |format|
+      format.html
       format.json { render json: @riffblobs.as_json }
     end
   end
@@ -38,7 +39,8 @@ class RiffblobsController < ApplicationController
     # params[:riffblob] = { file: params[:file], shoutout: params[:shoutout], pointer: params[:pointer] }
     # params[:riffblob] = { file: params[:file], shoutout: params[:fullname]}
     # p params
-    @riffblob = Riffblob.new(riffblob_params)
+    @user = current_user
+    @riffblob = @user.riffblobs.new(riffblob_params)
     if @riffblob.save
       @riffblob.url = @riffblob.file
       @riffblob.save
