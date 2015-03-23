@@ -4,8 +4,9 @@ class RiffblobsController < ApplicationController
   # GET /riffblobs
   # GET /riffblobs.json
   def index
-    @riffblobs = Riffblob.all
+    @riffblobs = current_user.riffblobs
     respond_to do |format|
+      format.html
       format.json { render json: @riffblobs.as_json }
     end
   end
@@ -35,9 +36,11 @@ class RiffblobsController < ApplicationController
   def create
     p '*'*100
     # p riffblob_params
-    params[:riffblob] = { file: params[:file], shoutout: params[:fullname]}
-    p params
-    @riffblob = Riffblob.new(riffblob_params)
+    # params[:riffblob] = { file: params[:file], shoutout: params[:shoutout], pointer: params[:pointer] }
+    # params[:riffblob] = { file: params[:file], shoutout: params[:fullname]}
+    # p params
+    @user = current_user
+    @riffblob = @user.riffblobs.new(riffblob_params)
     if @riffblob.save
       @riffblob.url = @riffblob.file
       @riffblob.save
@@ -45,9 +48,9 @@ class RiffblobsController < ApplicationController
       format.json { render json: @riffblob.errors, status: :unprocessable_entity }
     end
 
-    respond_to do |format|
-      format.json
-    end
+    # respond_to do |format|
+    #   format.json
+    # end
   end
 
   # DELETE /riffblobs/1
@@ -68,6 +71,6 @@ class RiffblobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def riffblob_params
-      params.require(:riffblob).permit(:user_id, :file, :shoutout, :url)
+      params.require(:riffblob).permit(:user_id, :file, :shoutout, :url, :pointer)
     end
 end
