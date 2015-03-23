@@ -1,1 +1,1 @@
-json.extract! @riffblob, :id, :photo_name, :owner, :shoutout, :created_at, :updated_at
+json.extract! @riffblob, :id, :file, :user_id, :shoutout, :created_at, :updated_at
