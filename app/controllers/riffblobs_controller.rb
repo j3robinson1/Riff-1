@@ -34,16 +34,13 @@ class RiffblobsController < ApplicationController
   # # POST /riffblobs
   # # POST /riffblobs.json
   def create
-    p '*'*100
-    # p riffblob_params
-    # params[:riffblob] = { file: params[:file], shoutout: params[:shoutout], pointer: params[:pointer] }
-    # params[:riffblob] = { file: params[:file], shoutout: params[:fullname]}
-    # p params
+    params[:riffblob] = { file: params[:file], shoutout: params[:shoutout], pointer: params[:pointer] }
+    params[:riffblob] = { file: params[:file], shoutout: params[:fullname]}
     @user = current_user
     @riffblob = @user.riffblobs.new(riffblob_params)
     if @riffblob.save
       @riffblob.url = @riffblob.file
-      @riffblob.user_id = current_user
+      @riffblob.user_id = current_user.id
       @riffblob.save
     else
       format.json { render json: @riffblob.errors, status: :unprocessable_entity }
