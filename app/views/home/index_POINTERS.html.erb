@@ -1,0 +1,38 @@
+<% @tempblobs = @riffblobs %>
+
+<% @tempblobs.each do |t| %>
+  <strong>
+    User_id:
+    <%= t.user_id %>
+    <br/>
+    \#:
+    <%= t.shoutout %>
+    <br/>
+    URL:
+    <%= t.url %>
+    <br/>
+    <%= t.pointer %>
+    <br/>
+    <br/>
+    ||||||||||||||||||||
+    <br/>
+  </strong>
+  <% end %>
+  <% @riffblobs.each do |r| %>
+    <% if t.id == r.pointer %>
+    User_id:
+    <%= r.user_id %>
+    <br/>
+    \#:
+    <%= r.shoutout %>
+    <br/>
+    URL:
+    <%= r.url %>
+    <br/>
+    <%= r.pointer %>
+    <br/>
+    <br/>
+    ||||||||||||||||||||
+    <br/>
+  <% end %>
+<% end %>

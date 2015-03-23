@@ -2,16 +2,16 @@
 
 %p
   %b Photo name:
-  = @riffblob.photo_name
+  = @riffblob.url
 %p
   %b Owner:
-  = @riffblob.owner
+  = @riffblob.user_id
 %p
   %b Shoutout:
   = @riffblob.shoutout
 %p
   %b Image:
-  = @riffblob.image
+  = @riffblob.pointer
 
 = link_to 'Edit', edit_riffblob_path(@riffblob)
 \|

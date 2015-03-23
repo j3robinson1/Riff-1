@@ -1,6 +1,6 @@
 class Riffblob < ActiveRecord::Base
 
-
+  belongs_to :user
   attr_accessor :sound_url
 
   aws_keys = if ['development', 'test'].include?(Rails.env)
