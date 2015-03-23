@@ -1,10 +1,13 @@
-<h2>Upload View</h2>
+<h2>Riffs Feed</h2>
 
-<div class="alert alert-info" >
-  Server Response: {{response | json}}
-  Fullname: <b>{{response.fullname}}</b><br />
-  Picture: {{response.pictureUrl}}
-</div>
+<ul>
+  <li ng-repeat="response in RiffController.responses">
+    <audio ng-if="response.file" controls>
+      <source ng-src={{audioUrl}} type="audio/mp3">
+    </audio>
+  </li>
+</ul>
+
 
 <!-- <ul>
   <li>
