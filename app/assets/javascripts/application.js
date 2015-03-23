@@ -24,4 +24,3 @@
 //= require bootstrap/modal
 //= require bootstrap/transition
 //= require profiles
-//= require factories/service

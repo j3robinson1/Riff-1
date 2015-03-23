@@ -42,28 +42,12 @@ class RiffblobsController < ApplicationController
       @riffblob.url = @riffblob.file
       @riffblob.save
     else
-      # format.html { render :nothing => true }
-      # format.json { render json: @riffblob.errors, status: :unprocessable_entity }
+      format.json { render json: @riffblob.errors, status: :unprocessable_entity }
     end
 
     respond_to do |format|
       format.json
     end
-  end
-
-  # PATCH/PUT /riffblobs/1
-  # PATCH/PUT /riffblobs/1.json
-  def update
-    # params[:riffblob] = { url: params[:url]}
-    # respond_to do |format|
-    #   if @riffblob.update(riffblob_params)
-    #     format.html { notice: 'Riffblob was successfully updated.' }
-    #     format.json { render :nothing => true, status: :ok, location: @riffblob }
-    #   else
-    #     format.html { render :nothing => true }
-    #     format.json { render json: @riffblob.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   # DELETE /riffblobs/1
