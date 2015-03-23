@@ -5,7 +5,8 @@
   .controller('RiffController', function ($scope, $sce, $routeParams, RiffService, $location) {
 
     $scope.uploadComplete = function (content) {
-
+      console.log("**********************")
+      console.log(content)
       $scope.response = (content); // Presumed content is a json string!
       console.log($scope.response.file)
       $scope.audioUrl = $scope.response.file;

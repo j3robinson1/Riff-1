@@ -4,7 +4,7 @@ class RiffblobsController < ApplicationController
   # GET /riffblobs
   # GET /riffblobs.json
   def index
-    @riffblobs = Riffblob.all.map{|rb| {file: rb.file} }
+    @riffblobs = Riffblob.all
     respond_to do |format|
       format.json { render json: @riffblobs.as_json }
     end
@@ -38,30 +38,32 @@ class RiffblobsController < ApplicationController
     params[:riffblob] = { file: params[:file], shoutout: params[:fullname]}
     p params
     @riffblob = Riffblob.new(riffblob_params)
+    if @riffblob.save
+      @riffblob.url = @riffblob.file
+      @riffblob.save
+    else
+      # format.html { render :nothing => true }
+      # format.json { render json: @riffblob.errors, status: :unprocessable_entity }
+    end
 
     respond_to do |format|
-      if @riffblob.save
-        format.json
-      else
-        format.html { render :nothing => true }
-        format.json { render json: @riffblob.errors, status: :unprocessable_entity }
-      end
+      format.json
     end
   end
 
   # PATCH/PUT /riffblobs/1
   # PATCH/PUT /riffblobs/1.json
   def update
-    params[:riffblob] = { url: params[:url]}
-    respond_to do |format|
-      if @riffblob.update(riffblob_params)
-        format.html { notice: 'Riffblob was successfully updated.' }
-        format.json { render :nothing => true, status: :ok, location: @riffblob }
-      else
-        format.html { render :nothing => true }
-        format.json { render json: @riffblob.errors, status: :unprocessable_entity }
-      end
-    end
+    # params[:riffblob] = { url: params[:url]}
+    # respond_to do |format|
+    #   if @riffblob.update(riffblob_params)
+    #     format.html { notice: 'Riffblob was successfully updated.' }
+    #     format.json { render :nothing => true, status: :ok, location: @riffblob }
+    #   else
+    #     format.html { render :nothing => true }
+    #     format.json { render json: @riffblob.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # DELETE /riffblobs/1
@@ -69,7 +71,7 @@ class RiffblobsController < ApplicationController
   def destroy
     @riffblob.destroy
     respond_to do |format|
-      format.html { notice: 'Riffblob was successfully destroyed.' }
+      format.html { render notice: 'Riffblob was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

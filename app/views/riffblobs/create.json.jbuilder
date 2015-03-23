@@ -1,2 +1,2 @@
-json.extract! @riffblob, :file
+json.extract! @riffblob, :url
 json.extract! @riffblob, :id
