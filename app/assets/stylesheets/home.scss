@@ -231,13 +231,14 @@ h1.splash {
 
 .splashlink {
   color:white;
+  -webkit-transition: color 1.5s;
   font-family: 'Whatever';
   font-size: 6vh;
   padding:5%;
   width:auto;
   text-decoration:none;
   &:hover {
-    color: #2D1C33;
+    color: #E56B00;
   }
 }
 
