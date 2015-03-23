@@ -1,12 +1,13 @@
 <h2>Riffs Feed</h2>
-
 <ul>
-  <li ng-repeat="response in RiffController.responses">
-    <audio ng-if="response.file" controls>
-      <source ng-src={{audioUrl}} type="audio/mp3">
+  <li ng-repeat="riff in riffs" >
+    <!-- {{riff.url}} -->
+    <audio controls>
+      <source ng-src={{riff.url}} type="audio/mp3">
     </audio>
   </li>
 </ul>
+
 
 
 <!-- <ul>

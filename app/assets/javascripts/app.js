@@ -16,7 +16,7 @@
       templateUrl: 'assets/upload.html',
       controller: 'RiffController as riffCtrl'
     })
-    .when('/riffblobs.json', {
+    .when('/main', {
       templateUrl: 'assets/main.html',
       controller: 'RiffController as riffCtrl'
     });

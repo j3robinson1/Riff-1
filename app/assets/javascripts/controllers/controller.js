@@ -2,7 +2,7 @@
 (function () {
   "use strict";
   angular.module('riffApp')
-  .controller('RiffController', function ($scope, $sce, $routeParams, $location) {
+  .controller('RiffController', function (RiffService, $scope, $sce, $routeParams, $location) {
 
     $scope.uploadComplete = function (content) {
       console.log("**********************")
@@ -17,10 +17,15 @@
       $scope.fullname = '';
       // Look for way to clear the input[type=file] element
       // addMyRiffs($scope.response.file, $scope.response.id);
+
+      $location.path('/main');
     };
 
-
-
+    RiffService.getRiffs().success(function(data) {
+      $scope.riffs = data;
     });
+
+
+  });
 
 })();

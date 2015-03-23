@@ -9,9 +9,7 @@
 <div class="upload">
   <h2>Upload Your Riff</h2>
 
-
   <form ng-upload="uploadComplete(content)" action="/riffblobs.json">
-
     <p>
       <label>Fullname:</label>
       <input type="text" name="fullname" ng-model="response.fullname" >
@@ -24,14 +22,15 @@
       <input type="submit" class="btn" value="Submit" >
     </p>
   </form>
+</div>
 
-  <audio ng-if="response.file" controls>
+
+
+  <!-- <audio ng-if="response.file" controls>
     <source ng-src={{audioUrl}} type="audio/mp3">
-  </audio>
+  </audio> -->
 
-  <div class="alert alert-info" >
+  <!-- <div class="alert alert-info" >
     Server Response: {{response | json}}
     Picture: {{response.file}}
-  </div>
-
-</div>
+  </div> -->

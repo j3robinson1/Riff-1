@@ -1,0 +1,34 @@
+<h2>upload your new riff</h2>
+<%= simple_form_for(@riffblob, :html => { :multipart => true }) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <%= f.input :user_id %>
+    <%= f.input :shoutout %>
+    <%= f.file_field :file %>
+    <%= f.input :pointer %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+<br/>
+<br/>
+<br/>
+<h2>here is what other people are riffing about.....</h2>
+<% @riffblobs.each do |riffblob| %>
+  <br/>
+  User_id:
+  <%= riffblob.user_id %>
+  <br/>
+  \#:
+  <%= riffblob.shoutout %>
+  <br/>
+  URL:
+  <%= riffblob.url %>
+  <br/>
+  <%= riffblob.pointer %>
+  <br/>
+  <br/>
+  ||||||||||||||||||||
+  <br/>
+<% end %>

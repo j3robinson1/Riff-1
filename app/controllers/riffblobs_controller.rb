@@ -43,6 +43,7 @@ class RiffblobsController < ApplicationController
     @riffblob = @user.riffblobs.new(riffblob_params)
     if @riffblob.save
       @riffblob.url = @riffblob.file
+      @riffblob.user_id = current_user
       @riffblob.save
     else
       format.json { render json: @riffblob.errors, status: :unprocessable_entity }

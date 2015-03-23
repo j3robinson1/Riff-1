@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100);
 @import "bourbon";
+@import url(http://fonts.googleapis.com/css?family=The+Girl+Next+Door);
 $content-width:80%;
 
 .id {
@@ -120,6 +121,7 @@ body{
   }
 }
 
+
 //Actual Menu move
 #sidebartoggler {
   display:none;
@@ -165,7 +167,7 @@ html, body {
 }
 
 .view {
-  position:absolute;
+  position:relative;
   width:100%;
 }
 
@@ -227,12 +229,31 @@ html, body {
   src: url(Delicate.ttf);
 }
 
-h1 {
+@font-face {
+  font-family: 'Whatever';
+  src: url(whatever.ttf);
+}
+
+h1.splash {
   font-family:'Delicate';
-  font-size:200px;
   color:white;
   text-align:center;
   margin-bottom:10px;
+  top:50vh;
+  padding:5%;
+  font-size:40vh;
+}
+
+.splashlink {
+  color:white;
+  font-family: 'Whatever';
+  font-size: 6vh;
+  padding:5%;
+  width:auto;
+  text-decoration:none;
+  &:hover {
+    color: #2D1C33;
+  }
 }
 
 .record {
@@ -280,9 +301,4 @@ video#bgvid {
   width: auto; height: auto; z-index: -100;
   background: no-repeat;
   background-size: cover;
-}
-
-.splash {
-  top:150px;
-  font-size:40vh;
 }
