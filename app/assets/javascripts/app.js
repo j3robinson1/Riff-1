@@ -19,11 +19,11 @@
     .when('/main', {
       templateUrl: 'assets/main.html',
       controller: 'RiffController as riffCtrl'
-    });
-    .when('/all'), {
+    })
+    .when('/all', {
       templateUrl: 'assets/all.html',
-      controller: 'RiffController'
-    }
+      controller: 'RiffController2'
+    });
 
     $sceDelegateProvider.resourceUrlWhitelist([
       // Allow same origin resource loads.
