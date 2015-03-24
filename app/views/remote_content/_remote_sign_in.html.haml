@@ -1,22 +1,23 @@
-#sign_in_modal.modal
- .container1
-  .modal-dialog
-  .modal-content
-   %h4#SignInModal.title Sign into acount
-   %p Fill in the following to login
-   .modal-header
-   = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :remote => true, :format => :js, :html => {:class => "form-signin"}) do |f|
-    .modal-body
-     = text_field_tag 'user[email]', nil, :size=> 30, :placeholder => 'Email'
-     %br
-     = password_field_tag 'user[password]', nil, :size=> 30, :placeholder => 'Password'
-     %br
-     = check_box_tag 'user[remember_me]'
-     = label_tag 'user[remember_me]', 'Remember me'
-     %br
-    .footer
-     .form-actions
-      %a{ :href => "#", "data-dismiss" => "modal" } Cancel
-      %button.button Sign in
+%input#signintoggler{:type => "checkbox"}
+ #sign_in_modal.modal
+  .container1
+   .modal-dialog
+   .modal-content
+    %h4#SignInModal.title Sign into acount
+    %p Fill in the following to login
+    .modal-header
+    = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :remote => true, :format => :js, :html => {:class => "form-signin"}) do |f|
+     .modal-body
+      = text_field_tag 'user[email]', nil, :size=> 30, :placeholder => 'Email'
       %br
-      = link_to "Forgot your password?", new_password_path(:user)
+      = password_field_tag 'user[password]', nil, :size=> 30, :placeholder => 'Password'
+      %br
+      = check_box_tag 'user[remember_me]'
+      = label_tag 'user[remember_me]', 'Remember me'
+      %br
+     .footer
+      .form-actions
+       %button.button{ :href => "#", "data-dismiss" => "modal" } Cancel
+       %button.button Sign in
+       %br
+       = link_to "Forgot your password?", new_password_path(:user)
