@@ -12,6 +12,9 @@ class RiffblobsController < ApplicationController
   end
   def all
     @riffblobs = Riffblob.all
+    respond_to do |format|
+      format.json { render json: @riffblobs.as_json }
+    end
   end
   # GET /riffblobs/1
   # GET /riffblobs/1.json

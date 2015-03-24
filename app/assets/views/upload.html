@@ -10,16 +10,10 @@
   <h2>Upload Your Riff</h2>
 
   <form ng-upload="uploadComplete(content)" action="/riffblobs.json">
-    <p>
+
       <label>Fullname:</label>
-      <input type="text" name="fullname" ng-model="response.fullname" >
-    </p>
-    <p>
-      <label>Your picture (file will not be saved on the server):</label>
-      <input type="file" name="file">
-    </p>
-    <p>
-      <input type="submit" class="btn" value="Submit" >
+      <input type="text" name="fullname" ng-model="response.fullname" value="Riff Name:">
+      <input type="file" name="file"><input type="submit" class="btn" value="Submit" >
     </p>
   </form>
 </div>

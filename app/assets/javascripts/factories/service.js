@@ -13,9 +13,22 @@
     //   $http.patch(url + '/' + id, content);
     //   // url: (url + '/' + id);
     // };
+    return {
+      getRiffs: getRiffs,
+    };
+
+  })
+
+  angular.module('riffApp')
+  .factory('RiffService2', function ($http) {
+    var url2 = 'http://localhost:3000/riffblobs/all.json';
+    var getAllRiffs = function() {
+      return $http.get(url2);
+      console.log('getit')
+    };
 
     return {
-      getRiffs: getRiffs
+      getAllRiffs: getAllRiffs
       // addRiffs: addMyRiffs
     };
 
