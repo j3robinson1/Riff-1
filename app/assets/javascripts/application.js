@@ -23,5 +23,6 @@
 //= require bootstrap/dropdown
 //= require bootstrap/modal
 //= require bootstrap/transition
-//= require profiles
 //= require factories/service
+//= require profiles
+//= require home

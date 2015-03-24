@@ -15,6 +15,7 @@
 
       // Clear form (reason for using the 'ng-model' directive on the input elements)
       $scope.fullname = '';
+      $scope.pointer = '';
       // Look for way to clear the input[type=file] element
       // addMyRiffs($scope.response.file, $scope.response.id);
 

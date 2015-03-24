@@ -5,7 +5,7 @@ class CreateRiffblobs < ActiveRecord::Migration
       t.attachment :file
       t.text :shoutout
       t.text :url
-      t.string :pointer, :default => "1"
+      t.string :pointer
     end
   end
 end
