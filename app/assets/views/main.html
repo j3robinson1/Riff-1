@@ -1,7 +1,9 @@
 <h2>Riffs Feed</h2>
+<button ng-click="#/all"></button>
 <ul>
   <li ng-repeat="riff in riffs" >
     <!-- {{riff.url}} -->
+    <h3>{{riff.}}</h3>
     <audio controls>
       <source ng-src={{riff.url}} type="audio/mp3">
     </audio>

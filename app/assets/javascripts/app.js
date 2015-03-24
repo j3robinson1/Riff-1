@@ -20,6 +20,10 @@
       templateUrl: 'assets/main.html',
       controller: 'RiffController as riffCtrl'
     });
+    .when('/all'), {
+      templateUrl: 'assets/all.html',
+      controller: 'RiffController'
+    }
 
     $sceDelegateProvider.resourceUrlWhitelist([
       // Allow same origin resource loads.

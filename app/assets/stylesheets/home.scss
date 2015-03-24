@@ -50,7 +50,7 @@ body{
   margin:0;
   padding:0;
   list-style-type:none;
-  font-family:'Times New Roman', sans-serif;
+  font-family:'Sling';
   font-weight:100;
 }
 .page-content {
@@ -99,7 +99,7 @@ body{
   @include position(fixed, 0px 0 0px -190px);
   width:200px;
   padding:30px;
-  background:#2D1C33;
+  background:#1F0F00;
   color: #DFD1E3;
   z-index:0;
 
@@ -114,6 +114,9 @@ body{
     opacity:.5;
     cursor:pointer;
     transition:all .5s ease-in;
+    padding-top:5px;
+    padding-bottom:5px;
+    color: #FFDCA8;
     &:hover {
       opacity:1;
       color: #D3AFDB;
@@ -196,17 +199,17 @@ html, body {
   margin:auto;
   padding-top:100px;
   z-index:1;
-  width:20%;
+  width:30vw;
   h2 {
     color:white;
   }
-  input {
+  /* input {
     float:left;
-  }
+  } */
 }
 
 #mic {
-  width:30%;
+  width:40%;
   text-align:center;
   margin:0 auto;
   z-index:1;
@@ -234,6 +237,11 @@ html, body {
   src: url(whatever.ttf);
 }
 
+@font-face {
+  font-family: 'Sling';
+  src: url(Sling.ttf);
+}
+
 h1.splash {
   font-family:'Delicate';
   color:white;
@@ -247,7 +255,7 @@ h1.splash {
 .splashlink {
   color:white;
   -webkit-transition: color 1.5s;
-  font-family: 'Whatever';
+  font-family: 'Sling';
   font-size: 6vh;
   padding:5%;
   width:auto;
