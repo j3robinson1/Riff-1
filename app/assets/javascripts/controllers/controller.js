@@ -1,4 +1,4 @@
-// http://localhost:3000/riffblobs.json
+
 (function () {
   "use strict";
   angular.module('riffApp')
@@ -28,4 +28,13 @@
 
   });
 
+  angular.module('riffApp')
+  .controller('RiffController2', function (RiffService2, $scope, $sce, $routeParams, $location) {
+
+    RiffService2.getAllRiffs().success(function(data) {
+      $scope.blobs = data;
+      $location.path('/all');
+    });
+
+  });
 })();

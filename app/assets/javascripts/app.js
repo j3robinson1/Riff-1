@@ -19,6 +19,10 @@
     .when('/main', {
       templateUrl: 'assets/main.html',
       controller: 'RiffController as riffCtrl'
+    })
+    .when('/all', {
+      templateUrl: 'assets/all.html',
+      controller: 'RiffController2'
     });
 
     $sceDelegateProvider.resourceUrlWhitelist([
