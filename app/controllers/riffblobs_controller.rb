@@ -10,7 +10,9 @@ class RiffblobsController < ApplicationController
       format.json { render json: @riffblobs.as_json }
     end
   end
-
+  def all
+    @riffblobs = Riffblob.all
+  end
   # GET /riffblobs/1
   # GET /riffblobs/1.json
   def show

@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   resources :profiles
 
-  resources :riffblobs
+  resources :riffblobs do
+    collection do
+      get 'all'
+    end
+  end
   devise_for :users, :controllers => {registrations: 'registrations', sesions: 'sessions'}
   match 'remote_sign_in', to: 'remote_content#remote_sign_in', via: [:get]
   get 'home/index'
