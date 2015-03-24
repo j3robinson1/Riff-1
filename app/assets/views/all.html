@@ -4,8 +4,21 @@
   <li ng-repeat="blob in blobs" >
     <!-- {{riff.url}} -->
     <h3>{{blob.shoutout}}</h3>
+
     <audio controls>
-      <source ng-src={{blob.url}} type="audio/mp3">
-      </audio>
-    </li>
-  </ul>
+      <source ng-src={{blob.url}} type="audio/mp3" rel={{blob.id}}>
+    </audio>
+      <h2>Upload Your Riff</h2>
+
+      <form ng-upload="uploadComplete(content)" action="/riffblobs.json">
+
+          <label>Fullname:</label>
+          <input type="text" name="fullname" ng-model="response.fullname" value="Riff Name:">
+          <input type="hidden" name="pointer" ng-model="response.pointer" value={{blob.id}}>
+          <input type="file" name="file">
+          <br>
+          <input type="submit" class="btn" value="Submit" >
+        </p>
+      </form>
+  </li>
+</ul>

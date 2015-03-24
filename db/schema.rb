@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20150318210613) do
     t.datetime "file_updated_at"
     t.text     "shoutout",          limit: 65535
     t.text     "url",               limit: 65535
-    t.string   "pointer",           limit: 255,   default: "1"
+    t.string   "pointer",           limit: 255
   end
 
   create_table "users", force: :cascade do |t|
