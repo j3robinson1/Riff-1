@@ -26,20 +26,20 @@ input {
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
-  background-color: #8E7E96;
+  background-color: #5C3E18;
   border-radius: 5%;
   z-index:100;
 }
 .button {
-  background-color: #C4B4CC;
+  background-color: #F2C78F;
 }
 .button:hover {
-  background-color: #695E6E;
+  background-color: #CFAB7C;
   cursor: pointer;
-  color: #C4B4CC;
+  color: #E8DAC8;
 }
 #user_email, #user_password, #user_password_confirmation {
-  background-color: #EFE4F5;
+  background-color: #E8DAC8;
 }
 .modal-body {
   width: 240px;
