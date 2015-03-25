@@ -194,6 +194,29 @@ html, body {
   z-index:-1;
 }
 
+#bg2 {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index:-1;
+}
+#bg2 img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+  z-index:-1;
+  -webkit-filter: sepia(1);
+  filter: sepia(1);
+  opacity: 1;
+}
+
 .upload {
   text-align:center;
   margin:auto;
@@ -310,4 +333,32 @@ video#bgvid {
   width: auto; height: auto; z-index: -100;
   background: no-repeat;
   background-size: cover;
+}
+
+h2 {
+  font-size:12vh;
+  margin:0;
+}
+
+li.riff {
+  list-style-type:none;
+  h3 {
+    width:10vw;
+    font-size:4vh;
+    margin:0;
+    color:black;
+  }
+}
+
+div.audio {
+  background: url('staffC.png');
+  background-size: 370px;
+  background-position:40% 20%;
+  background-repeat:no-repeat;
+  padding:60px;
+}
+
+audio {
+  padding-bottom:20px;
+
 }

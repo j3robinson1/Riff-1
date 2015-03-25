@@ -1,4 +1,4 @@
-<h2>Riffs Feed</h2>
+<h1>Riffs Feed</h1>
 
 <ul>
   <li ng-repeat="blob in blobs" >
@@ -6,6 +6,10 @@
     <h3>{{blob.shoutout}}</h3>
     <audio controls>
       <source ng-src={{blob.url}} type="audio/mp3">
-      </audio>
-    </li>
-  </ul>
+    </audio>
+    <audio ng-if={{blob.id}}=={{}}>
+      <source ng-src={{blob.url}} type="audio/mp3">
+    </audio>
+
+  </li>
+</ul>
