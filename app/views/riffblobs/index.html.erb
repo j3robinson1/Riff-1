@@ -2,12 +2,12 @@
 <%= link_to 'Add riffblob', new_riffblob_path =%>
 <br>
 <% @riffblobs.each do |riffblob| %>
-  <%= riffblob.user_id%>
+  <br>
+  <%= riffblob.id%>
   <br>
   <%= riffblob.shoutout%>
   <br>
   <%= riffblob.url%>
   <br>
-  <%= riffblob.pointer%>
-  <br>
+  <%= link_to 'show', riffblob_path(riffblob)%>
 <% end %>

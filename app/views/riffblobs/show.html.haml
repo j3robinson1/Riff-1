@@ -10,9 +10,16 @@
   %b Shoutout:
   = @riffblob.shoutout
 %p
-  %b Image:
+  %b pointer:
   = @riffblob.pointer
-
 = link_to 'Edit', edit_riffblob_path(@riffblob)
 \|
 = link_to 'Back', riffblobs_path
+%br
+- @riffblobs.each do |c|
+  =c.url
+  %br
+  =c.pointer
+  %br
+  =c.id
+  %br
