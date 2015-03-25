@@ -15,13 +15,7 @@ gem 'simple_form'
 gem 'haml-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
-# Use mysql as the database for Active Record
-group :production do
-  gem 'pg'
-end
-group :development do
-  gem 'mysql2'
-end
+gem 'mysql2'
 # group :development, :test do
 #  gem 'pg', '0.13.2'
 # end
