@@ -1,4 +1,4 @@
-<h2>Riffs Feed</h2>
+<h1>Riffs Feed</h1>
 
 <ul>
   <span ng-repeat="blob in blobs" >
@@ -7,6 +7,7 @@
     <audio controls>
       <source ng-src={{blob.url}} type="audio/mp3">
     </audio>
+<<<<<<< HEAD
     <a href ng-click="formToggle = !formToggle"><h2>Upload Your Riff</h2></a>
       <form ng-upload="uploadComplete(content)" action="/riffblobs.json" ng-show="formToggle">
 
@@ -30,4 +31,11 @@
   <br>
   <br>
   <br>
+=======
+    <audio ng-if={{blob.id}}=={{}}>
+      <source ng-src={{blob.url}} type="audio/mp3">
+    </audio>
+
+  </li>
+>>>>>>> ca19a09fb85ccd320ef593461aab16b9c90339c2
 </ul>
