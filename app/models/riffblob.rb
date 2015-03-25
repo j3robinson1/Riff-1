@@ -1,5 +1,7 @@
 class Riffblob < ActiveRecord::Base
-
+  def childs
+    Riffblob.where("pointer=?", self.id)
+  end
   belongs_to :user
   attr_accessor :sound_url
 

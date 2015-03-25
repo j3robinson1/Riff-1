@@ -1,16 +1,14 @@
 <h2>Riffs Feed</h2>
 
 <ul>
-  <li ng-repeat="blob in blobs" >
-    <!-- {{riff.url}} -->
+  <span ng-repeat="blob in blobs" >
+    <div ng-if=blob.pointer==null>
     <h3>{{blob.shoutout}}</h3>
-
     <audio controls>
-      <source ng-src={{blob.url}} type="audio/mp3" rel={{blob.id}}>
+      <source ng-src={{blob.url}} type="audio/mp3">
     </audio>
-      <h2>Upload Your Riff</h2>
-
-      <form ng-upload="uploadComplete(content)" action="/riffblobs.json">
+    <a href ng-click="formToggle = !formToggle"><h2>Upload Your Riff</h2></a>
+      <form ng-upload="uploadComplete(content)" action="/riffblobs.json" ng-show="formToggle">
 
           <label>Fullname:</label>
           <input type="text" name="fullname" ng-model="response.fullname" value="Riff Name:">
@@ -18,7 +16,18 @@
           <input type="file" name="file">
           <br>
           <input type="submit" class="btn" value="Submit" >
-        </p>
       </form>
+    <ul>
+      <li ng-repeat="child in blob.childs">
+        <h3>{{child.shoutout}}</h3>
+        <audio controls>
+          <source ng-src={{child.url}} type="audio/mp3">
+        </audio>
+      </li>
+    </ul>
+
   </li>
+  <br>
+  <br>
+  <br>
 </ul>

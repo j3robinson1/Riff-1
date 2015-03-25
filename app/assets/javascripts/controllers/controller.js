@@ -33,7 +33,7 @@
   .controller('RiffController2', function (RiffService2, $scope, $sce, $routeParams, $location) {
 
     RiffService2.getAllRiffs().success(function(data) {
-      $scope.blobs = data;
+      $scope.blobs = data.riffblobs;
       $location.path('/all');
     });
 
