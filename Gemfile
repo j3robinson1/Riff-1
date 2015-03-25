@@ -19,7 +19,7 @@ gem 'mysql2'
 # group :development, :test do
 #  gem 'pg', '0.13.2'
 # end
-
+gem 'rails_12factor', group: :production
 # group :production do
 #  gem 'pg', '0.13.2'
 # end
