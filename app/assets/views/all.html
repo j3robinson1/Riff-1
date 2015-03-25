@@ -7,8 +7,7 @@
     <audio controls>
       <source ng-src={{blob.url}} type="audio/mp3">
     </audio>
-<<<<<<< HEAD
-    <a href ng-click="formToggle = !formToggle"><h2>Upload Your Riff</h2></a>
+    <a href ng-click="formToggle = !formToggle"><h3>Upload Your Riff</h3></a>
       <form ng-upload="uploadComplete(content)" action="/riffblobs.json" ng-show="formToggle">
 
           <label>Fullname:</label>
@@ -31,11 +30,5 @@
   <br>
   <br>
   <br>
-=======
-    <audio ng-if={{blob.id}}=={{}}>
-      <source ng-src={{blob.url}} type="audio/mp3">
-    </audio>
-
   </li>
->>>>>>> ca19a09fb85ccd320ef593461aab16b9c90339c2
 </ul>
