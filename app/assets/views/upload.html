@@ -1,4 +1,4 @@
-<div id="bg">
+<div id="bg1">
   <img src="http://www.eskimoinsulation.com/images/sound-rooms.jpg" alt="">
 </div>
 <h1>riff</h1>
@@ -9,12 +9,10 @@
 <div class="upload">
   <h2>Upload Your Riff</h2>
 
-  <form ng-upload="uploadComplete(content)" action="/riffblobs.json">
-
-      <label>Fullname:</label>
-      <input type="text" name="fullname" ng-model="response.fullname" value="Riff Name:">
-      <input type="file" name="file"><input type="submit" class="btn" value="Submit" >
-    </p>
+  <form class="uploadRiff" ng-upload="uploadComplete(content)" action="/riffblobs.json">
+      <span>Name Your Riff:</span><input type="text" name="fullname" ng-model="response.fullname">
+      <input type="file" name="file">
+      <input type="submit" class="btn" value="Submit" >
   </form>
 </div>
 
