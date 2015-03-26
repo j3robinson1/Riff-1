@@ -4,7 +4,7 @@ class RiffblobsController < ApplicationController
   # GET /riffblobs
   # GET /riffblobs.json
   def index
-    @riffblobs = Riffblob.all
+    @riffblobs = current_user.riffblobs
     respond_to do |format|
       format.html
       format.json { render json: @riffblobs.as_json }
