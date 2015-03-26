@@ -6,7 +6,7 @@
   'ngUpload'
 
   ])
-  .config(function, ['$routeProvider', '$sceDelegateProvider', ($routeProvider, $sceDelegateProvider) {
+  .config(['$routeProvider', '$sceDelegateProvider', function ($routeProvider, $sceDelegateProvider) {
     $routeProvider
     .when('/', {
       templateUrl: 'assets/splash.html',
