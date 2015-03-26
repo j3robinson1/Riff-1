@@ -6,7 +6,7 @@
   'ngUpload'
 
   ])
-  .config(function ($routeProvider, $sceDelegateProvider) {
+  .config(function, ['$routeProvider', '$sceDelegateProvider', ($routeProvider, $sceDelegateProvider) {
     $routeProvider
     .when('/', {
       templateUrl: 'assets/splash.html',
@@ -31,6 +31,6 @@
       // Allow loading from our assets domain.  Notice the difference between * and **.
       'https://dl.dropboxusercontent.com/**'
       ]);
-  });
+  }]);
 
 })();
