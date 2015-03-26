@@ -22,7 +22,7 @@ class Riffblob < ActiveRecord::Base
     app_secret: ENV["app_secret"],
     access_token: ENV["access_token"],
     access_token_secret: ENV["access_token_secret"],
-    user_id: ENV["2413438"],
+    user_id: ENV["user_id"],
     access_type: ENV["app_folder"]
   }
     # Rails.root.join("config/dropbox.yml")
