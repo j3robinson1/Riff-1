@@ -14,10 +14,24 @@ class Riffblob < ActiveRecord::Base
       secret_access_key: ENV['AWS-SECRETKEY']
     }
   end
-
+  p '*'*100
+  p ENV["app_key"]
+  p ENV["app_secret"]
+  p ENV["access_token"]
+  p ENV["access_token_secret"]
+  p ENV["user_id"]
+  p ENV['access_type']
   has_attached_file :file,
   :storage => :dropbox,
-  :dropbox_credentials => Rails.root.join("config/dropbox.yml")
+  :dropbox_credentials => {
+    app_key: ENV["app_key"],
+    app_secret: ENV["app_secret"],
+    access_token: ENV["access_token"],
+    access_token_secret: ENV["access_token_secret"],
+    user_id: ENV["user_id"],
+    access_type: ENV['access_type']
+  }
+    # Rails.root.join("config/dropbox.yml")
 
 
   #,

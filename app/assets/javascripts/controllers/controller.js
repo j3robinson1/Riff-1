@@ -2,7 +2,7 @@
 (function () {
   "use strict";
   angular.module('riffApp')
-  .controller('RiffController', function (RiffService, $scope, $sce, $routeParams, $location) {
+  .controller('RiffController',['RiffService', '$scope', '$sce', '$routeParams', '$location', function (RiffService, $scope, $sce, $routeParams, $location) {
 
     $scope.uploadComplete = function (content) {
       console.log("**********************")
@@ -27,15 +27,15 @@
     });
 
 
-  });
+  }]);
 
   angular.module('riffApp')
-  .controller('RiffController2', function (RiffService2, $scope, $sce, $routeParams, $location) {
+  .controller('RiffController2',['RiffService2', '$scope', '$sce', '$routeParams', '$location', function (RiffService2, $scope, $sce, $routeParams, $location) {
 
     RiffService2.getAllRiffs().success(function(data) {
       $scope.blobs = data.riffblobs;
       $location.path('/all');
     });
 
-  });
+  }]);
 })();

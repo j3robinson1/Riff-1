@@ -1,9 +1,9 @@
 (function () {
   "use strict";
   angular.module('riffApp')
-  .factory('RiffService', function ($http) {
+  .factory('RiffService',['$http', function ($http) {
 
-    var url = 'http://localhost:3000/riffblobs.json';
+    var url = '/riffblobs.json';
     var getRiffs = function () {
       return $http.get(url);
       console.log('getit')
@@ -17,11 +17,11 @@
       getRiffs: getRiffs,
     };
 
-  })
+  }])
 
   angular.module('riffApp')
-  .factory('RiffService2', function ($http) {
-    var url2 = 'http://localhost:3000/riffblobs/all.json';
+  .factory('RiffService2',['$http', function ($http) {
+    var url2 = '/riffblobs/all.json';
     var getAllRiffs = function() {
       return $http.get(url2);
       console.log('getit')
@@ -32,6 +32,6 @@
       // addRiffs: addMyRiffs
     };
 
-  });
+  }]);
 
 })();
