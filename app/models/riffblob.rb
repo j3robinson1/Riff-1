@@ -17,7 +17,15 @@ class Riffblob < ActiveRecord::Base
 
   has_attached_file :file,
   :storage => :dropbox,
-  :dropbox_credentials => Rails.root.join("config/dropbox.yml")
+  :dropbox_credentials => {
+    app_key: ENV["app_key"],
+    app_secret: ENV["app_secret"],
+    access_token: ENV["access_token"],
+    access_token_secret: ENV["access_token_secret"],
+    user_id: ENV["2413438"],
+    access_type: ENV["app_folder"]
+  }
+    # Rails.root.join("config/dropbox.yml")
 
 
   #,
