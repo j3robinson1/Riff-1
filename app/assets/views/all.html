@@ -12,10 +12,7 @@
           <source ng-src={{blob.url}} type="audio/mp3">
         </audio>
       </div>
-      <a href ng-click="formToggle = !formToggle"><h3>Upload Your Riff</h3></a>
-      <a href ng-click="commentToggle = !commentToggle"><h3>Comments</h3></a>
-    </div>
-    
+    <a href ng-click="formToggle = !formToggle"><h3>Upload Your Riff</h3></a>
       <form ng-upload="uploadComplete(content)" action="/riffblobs.json" ng-show="formToggle">
           <input type="text" name="fullname" ng-model="response.fullname" value="Riff Name:">
           <input type="hidden" name="pointer" ng-model="response.pointer" value={{blob.id}}>
@@ -23,7 +20,7 @@
           <br>
           <input type="submit" class="btn" value="Submit" >
       </form>
-    
+    <a href ng-click="commentToggle = !commentToggle"><h3>Comments</h3></a>
     <ul ng-show="commentToggle">
       <li ng-repeat="child in blob.childs">
         <h3 class="shoutout">{{child.shoutout}}</h3>
@@ -32,6 +29,7 @@
         </audio>
       </li>
     </ul>
+    </div>
   </li>
 
 
