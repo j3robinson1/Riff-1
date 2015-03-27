@@ -44,7 +44,7 @@ class RiffblobsController < ApplicationController
     params[:riffblob] = { file: params[:file], shoutout: params[:fullname], pointer: params[:pointer] }
     @user = current_user
     @riffblob = @user.riffblobs.new(riffblob_params)
-    
+
     if @riffblob.save
       @riffblob.url = @riffblob.file
       @riffblob.user_id = current_user.id

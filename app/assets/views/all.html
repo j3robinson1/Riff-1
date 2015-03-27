@@ -1,37 +1,36 @@
-<h1>Riffs Feed</h1>
+<h2>Riffs Feed</h2>
 <div id="bg">
-  <img src="assets/riffpic2.jpg" alt="">
+  <img src="http://michaelwroberts.com/wp-content/uploads/2014/02/record-player.jpg" alt="">
 </div>
-<ul>
-  <span ng-repeat="blob in blobs" >
+<ul class="allblobs">
+  <li ng-repeat="blob in blobs" class="blob">
     <div ng-if=blob.pointer==null>
-    <h3>{{blob.shoutout}}</h3>
-    <audio controls>
-      <source ng-src={{blob.url}} type="audio/mp3">
-    </audio>
-    <a href class="playall">></a>
+      <img class="avatar" src="http://www.fillmurray.com/g/200/300" alt="">
+      <h3 class="shoutout">{{blob.shoutout}}</h3>
+      <div class="audiowrap">
+        <audio class="allaudio" controls>
+          <source ng-src={{blob.url}} type="audio/mp3">
+        </audio>
+      </div>
+    </div>
+  </li>
     <a href ng-click="formToggle = !formToggle"><h3>Upload Your Riff</h3></a>
       <form ng-upload="uploadComplete(content)" action="/riffblobs.json" ng-show="formToggle">
-
-          <label>Fullname:</label>
           <input type="text" name="fullname" ng-model="response.fullname" value="Riff Name:">
           <input type="hidden" name="pointer" ng-model="response.pointer" value={{blob.id}}>
           <input type="file" name="file">
           <br>
           <input type="submit" class="btn" value="Submit" >
       </form>
-    <ul>
+    <a href ng-click="commentToggle = !commentToggle"><h3>Comments</h3></a>
+    <ul ng-show="commentToggle">
       <li ng-repeat="child in blob.childs">
-        <h3>{{child.shoutout}}</h3>
+        <h3 class="shoutout">{{child.shoutout}}</h3>
         <audio controls>
           <source ng-src={{child.url}} type="audio/mp3">
         </audio>
       </li>
     </ul>
 
-  </li>
-  <br>
-  <br>
-  <br>
-  </li>
+
 </ul>

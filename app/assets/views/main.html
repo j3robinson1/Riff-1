@@ -1,15 +1,17 @@
-
-<div id="bg2">
-  <img src="assets/musicstand.jpg" alt="">
+<div id="bg3">
+  <img src="http://cdn.home-designing.com/wp-content/uploads/2013/11/28-music-room.jpg" alt="">
 </div>
+
 <div class="mainwrapper">
-  <h2>My Riffs</h2>
+  <div class="navbuttons">a
+    <a class="navbutton" href="#/">Home</a><h2>My Riffs</h2><a class="navbutton" href="#/all">Riff Feed</a>
+  </div>
   <a href="#/all">click me!</a>
+<div class="musicstand">
 <div class="sheet">
   <ul>
     <li class="riff" ng-repeat="riff in riffs" >
-      <!-- {{riff.url}} -->
-      <h3>{{riff.shoutout}}:</h3>
+      <h3 class="shoutout">{{riff.shoutout}}:</h3>
       <div class="audio">
         <audio controls>
           <source ng-src={{riff.url}} type="audio/mp3">
@@ -17,6 +19,10 @@
       </div>
     </li>
   </ul>
+</div>
+<div id="bg2">
+  <img src="assets/musicstandT.png" alt="">
+</div>
 </div>
 </div>
 
