@@ -6,7 +6,6 @@ class RiffblobsController < ApplicationController
   def index
     @riffblobs = current_user.riffblobs
     respond_to do |format|
-      format.html
       format.json { render json: @riffblobs.as_json }
     end
   end
