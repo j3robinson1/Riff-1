@@ -13,7 +13,6 @@
         </audio>
       </div>
     </div>
-  </li>
     <a href ng-click="formToggle = !formToggle"><h3>Upload Your Riff</h3></a>
       <form ng-upload="uploadComplete(content)" action="/riffblobs.json" ng-show="formToggle">
           <input type="text" name="fullname" ng-model="response.fullname" value="Riff Name:">
@@ -31,6 +30,7 @@
         </audio>
       </li>
     </ul>
+  </li>
 
 
 </ul>
