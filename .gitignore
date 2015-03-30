@@ -12,5 +12,8 @@
 !/log/.keep
 /tmp
 /config/aws-keys.yml
+<<<<<<< HEAD
 /config/dropbox.yml
 /config/dropbox.yml
+=======
+>>>>>>> parent of 456180b... fixed storing photo into s3
