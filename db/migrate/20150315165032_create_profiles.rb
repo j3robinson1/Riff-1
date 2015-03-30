@@ -13,6 +13,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.integer :zip, :limit => 5
       t.integer :cell, :limit => 8
       t.integer :home, :limit => 8
+      t.string :user_id
 
       t.timestamps null: false
     end

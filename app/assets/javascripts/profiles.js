@@ -2,6 +2,7 @@
  $(document).on('click', '.create-profile', function(){
   console.log('hey');
   var profile = {
+    avatar: $(".avatar").val(),
     firstName: $(".firstName").val(),
     lastName: $(".lastName").val(),
     birthDate: $(".birthDate").val(),
@@ -10,7 +11,6 @@
     address2: $(".address2").val(),
     city: $(".city").val(),
     state: $(".state").val(),
-    avatar: $(".avatar").val(),
     zip: $(".zip").val(),
     home: $(".home").val(),
     cell: $(".cell").val(),

@@ -6,7 +6,7 @@ class ProfilesController < ApplicationController
       @profiles = Profile.all
     end
     respond_to do |format|
-      format.js
+      format.json
       format.html
     end
   end
@@ -19,9 +19,14 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @profile = Profile.create profile_params
-    respond_to do |format|
-      format.js
+    @profile = Profile.new profile_params
+    if @profile.save
+      @profile.user_id = current_user.id
+      @profile.save
+    else
+      respond_to do |format|
+        format.js
+      end
     end
   end
 
@@ -48,7 +53,8 @@ private
       :zip,
       :Cell,
       :Home,
-      :avatar
+      :avatar,
+      :user_id
     )
   end
 end

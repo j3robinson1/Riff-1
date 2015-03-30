@@ -13,15 +13,15 @@ class Profile < ActiveRecord::Base
   has_attached_file :avatar,
    :styles => { :medium => "300x300>", :thumb => "100x100>" },
    :default_url => "/images/:style/missing.png",
-   storage: :s3,
-   s3_credentials: aws_keys,
-   s3_permissions: 'authenticated-read',
-   path: "items/:basename.:extension",
-   s3_server_side_encryption: :aes256
-   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
-
-  def s3_url(style=nil, expires_in=30.minutes)
-    avatar.s3_object(style).url_for(:read, secure: true, expires: expires_in).to_s
-  end
-
+   :storage => :dropbox,
+    :dropbox_credentials => {
+    app_key: ENV["app_key"],
+    app_secret: ENV["app_secret"],
+    access_token: ENV["access_token"],
+    access_token_secret: ENV["access_token_secret"],
+    user_id: ENV["user_id"],
+    access_type: ENV['access_type']
+  }
+   validates :avatar,
+  attachment_content_type: { content_type: [/\Aimage\/.*\Z/]}
 end

@@ -36,6 +36,6 @@
       $scope.blobs = data.riffblobs;
       $location.path('/all');
     });
-
+    
   }]);
 })();

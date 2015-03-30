@@ -2,9 +2,11 @@
 <div id="bg">
   <img src="assets/all.jpg" alt="">
 </div>
+
 <ul class="allblobs">
   <li ng-repeat="blob in blobs" class="blob">
     <div ng-if=blob.pointer==null>
+      <!-- <li ng-repeat="profile in blob.profiles"> -->
       <img class="avatar" src="http://www.fillmurray.com/g/200/300" alt="">
       <h3 class="shoutout">{{blob.shoutout}}</h3>
       <div class="audiowrap">

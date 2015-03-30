@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20150318210613) do
     t.integer  "zip",                 limit: 8
     t.integer  "cell",                limit: 8
     t.integer  "home",                limit: 8
+    t.string   "user_id",             limit: 255
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
   end

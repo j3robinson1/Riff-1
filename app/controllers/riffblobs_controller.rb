@@ -10,6 +10,7 @@ class RiffblobsController < ApplicationController
     end
   end
   def all
+    # @profiles = Profile.all
     @riffblobs = Riffblob.all
     respond_to do |format|
       format.json #{ render json: @riffblobs.as_json }
@@ -43,7 +44,6 @@ class RiffblobsController < ApplicationController
     params[:riffblob] = { file: params[:file], shoutout: params[:fullname], pointer: params[:pointer] }
     @user = current_user
     @riffblob = @user.riffblobs.new(riffblob_params)
-
     if @riffblob.save
       @riffblob.url = @riffblob.file
       @riffblob.user_id = current_user.id

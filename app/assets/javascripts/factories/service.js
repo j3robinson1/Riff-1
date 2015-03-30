@@ -26,12 +26,10 @@
       return $http.get(url2);
       console.log('getit')
     };
-
     return {
       getAllRiffs: getAllRiffs
       // addRiffs: addMyRiffs
     };
 
   }]);
-
 })();
