@@ -1,7 +1,6 @@
 $('.sidebar').on('click', 'a', function(e) {
   e.preventDefault();
   var modalId = $(this).attr('rel');
-  var tmpl;
   if(modalId === "sign_in_modal") {
     $(".login-modal").html("<%= escape_javascript(render "remote_sign_in", :formats => [:html]) %>");
   } else {
